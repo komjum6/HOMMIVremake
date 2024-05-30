@@ -1,0 +1,90 @@
+{
+  "player_1": {
+    "dwarf": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [100, 200]
+    },
+    "zombie": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [50, 150]
+    },
+    "Efreet": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [300, 180]
+    },
+    "Genie": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [250, 220]
+    },
+    "Gargoyle": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [180, 120]
+    },
+    "hydra": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [400, 250]
+    },
+    "Ice Demon": {
+      "active_sprite_direction": "ne",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [320, 300]
+    }
+  },
+  "player_2": {
+    "Imp": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [600, 180]
+    },
+    "Leprechaun": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [550, 220]
+    },
+    "Mermaid": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [700, 250]
+    },
+    "Medusa": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [650, 300]
+    },
+    "Monk": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [780, 120]
+    },
+    "Naga": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [720, 150]
+    },
+    "Nightmare": {
+      "active_sprite_direction": "sw",
+      "active_sprite_action": "wait",
+      "active_sprite_speed": 2,
+      "start_position": [850, 180]
+    }
+  }
+}
