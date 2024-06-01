@@ -17,11 +17,11 @@ clock = pygame.time.Clock()
 
 # Read the JSON data from the file
 with open('battle_sequence_details.json', 'r') as json_file:
-    data = json.load(json_file)
+    battle_data = json.load(json_file)
 
 # Create dictionaries for player 1 and player 2 sprites
-player_1_sprites = data.get('player_1', {})
-player_2_sprites = data.get('player_2', {})
+player_1_sprites = battle_data.get('player_1', {})
+player_2_sprites = battle_data.get('player_2', {})
 
 # Extract sprite attributes for player 1
 player_1_sprite_names = []
