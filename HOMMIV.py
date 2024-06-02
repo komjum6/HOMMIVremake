@@ -82,39 +82,39 @@ while running:
     if battle_sequence:
         battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, grid_toggle, no_grid_movement_toggle)
     elif haven_town:
-        background = pygame.image.load("./Haven_city.webp")
+        background = pygame.image.load("./assets_webp/Haven_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         campaign_map_button.draw(screen)
     elif academy_town:
-        background = pygame.image.load("./Academy_city.webp")
+        background = pygame.image.load("./assets_webp/Academy_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         campaign_map_button.draw(screen)
     elif necropolis_town:
-        background = pygame.image.load("./Necropolis_city.webp")
+        background = pygame.image.load("./assets_webp/Necropolis_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         campaign_map_button.draw(screen)
     elif asylum_town:
-        background = pygame.image.load("./Asylum_city.webp")
+        background = pygame.image.load("./assets_webp/Asylum_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         campaign_map_button.draw(screen)
     elif preserve_town:
-        background = pygame.image.load("./Preserve_city.webp")
+        background = pygame.image.load("./assets_webp/Preserve_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         campaign_map_button.draw(screen)
     elif stronghold_town:
-        background = pygame.image.load("./Stronghold_city.webp")
+        background = pygame.image.load("./assets_webp/Stronghold_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         campaign_map_button.draw(screen)
     else:
 
         # Draw Background
-        background = pygame.image.load("./test_scene.webp")
+        background = pygame.image.load("./assets_webp/test_scene.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())
         screen.blit(background, (0, 0))
         
