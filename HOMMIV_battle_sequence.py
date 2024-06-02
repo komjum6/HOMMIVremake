@@ -3,6 +3,7 @@ import pygame
 from pygame.locals import *
 from create_hex_grid import *
 from pathing import *
+from config import *
 import json
 
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -15,9 +16,12 @@ clock = pygame.time.Clock()
 
 ############################## 
 
+
 # Read the JSON data from the file
 with open('battle_sequence_details.json', 'r') as json_file:
     battle_data = json.load(json_file)
+
+config = load_config()
 
 # Create dictionaries for player 1 and player 2 sprites
 player_1_sprites = battle_data.get('player_1', {})
@@ -65,7 +69,7 @@ sprite_directions, sprite_actions, sprite_speeds, start_positions = [a['active_s
 ##############################
 
 # Directories
-base_directory = "C:/Users/Justin/Downloads/Heroes_assets_pngs"
+base_directory = config["base_directory"]
 active_background_battle_sequence = "Death/battlefield_preset_map.Death.single/backdrop.png"
 battlefield_preset_map_directory = os.path.join(base_directory, "battlefield_preset_map/{0}".format(active_background_battle_sequence))  # Update with your actual path
     
@@ -210,7 +214,13 @@ class AnimatedSprite(pygame.sprite.Sprite):
         self.image = self.images[self.index]
 
 # Loading background of the battle sequence
-background_battle_sequence = pygame.image.load(battlefield_preset_map_directory)
+try:
+    background_battle_sequence = pygame.image.load(battlefield_preset_map_directory)
+except FileNotFoundError as e:
+    print("Heroes_assets_pngs folder is empty or not found. You may want to update config.json with its location.")
+    print(f"Missing file: {battlefield_preset_map_directory}")
+    exit()
+
 background_battle_sequence = pygame.transform.smoothscale(background_battle_sequence, screen.get_size())
 
 # Function to change the action of the sprite
