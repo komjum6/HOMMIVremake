@@ -290,15 +290,25 @@ def change_selected_action(active_sprites_list, selected_index, sprite_direction
 # Pygame keys for the battle sequence
 def battle_sequence_keys(event, RPG_mode_toggle):
     if RPG_mode_toggle:
-        if event.key == pygame.K_e:
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_e]:
             change_selected_action(active_sprites_list, 0, "same direction", "melee")
-        if event.key == pygame.K_w:
+        elif keys[pygame.K_a] and keys[pygame.K_w]:
+            change_selected_action(active_sprites_list, 0, "nw", "walk")
+        elif keys[pygame.K_w] and keys[pygame.K_d]:
+            change_selected_action(active_sprites_list, 0, "ne", "walk")
+        elif keys[pygame.K_d] and keys[pygame.K_s]:
+            change_selected_action(active_sprites_list, 0, "se", "walk")
+        elif keys[pygame.K_s] and keys[pygame.K_a]:
+            change_selected_action(active_sprites_list, 0, "sw", "walk")
+        elif keys[pygame.K_w]:
             change_selected_action(active_sprites_list, 0, "n", "walk")
-        if event.key == pygame.K_a:
+        elif keys[pygame.K_a]:
             change_selected_action(active_sprites_list, 0, "w", "walk")
-        if event.key == pygame.K_s:
+        elif keys[pygame.K_s]:
             change_selected_action(active_sprites_list, 0, "s", "walk")
-        if event.key == pygame.K_d:
+        elif keys[pygame.K_d]:
             change_selected_action(active_sprites_list, 0, "e", "walk")
 
 
