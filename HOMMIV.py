@@ -6,14 +6,15 @@ from pygame.locals import *
 from HOMMIV_battle_sequence import *
 from HOMMIV_campaign_ui_widgets import *
 import json
+import time
 
 # Initialize Pygame
 pygame.init()
 
 pygame.display.set_caption("HOMMIV Remake")
 
-campaign_map = True
-battle_sequence = False
+campaign_map = False #True
+battle_sequence = True #False
 haven_town = False
 academy_town = False
 necropolis_town = False
@@ -22,9 +23,13 @@ preserve_town = False
 stronghold_town = False
 
 grid_toggle = False
-no_grid_movement_toggle = False
+no_grid_movement_toggle = True
 
 RPG_mode_toggle = True
+
+# Cooldown time in seconds for mouse clicks
+click_cooldown = 0.5
+last_click_time = 0
 
 ################# UI #################
 
@@ -60,6 +65,8 @@ campaign_map_button = Button(100, 100, 300, 150, text="Campaign map", font_size=
 
 ############# End of UI ##############
 
+mouse_click_pos = False
+
 # Main loop
 running = True
 while running:
@@ -72,6 +79,12 @@ while running:
                 running = False
             if battle_sequence:
                 battle_sequence_keys(event, RPG_mode_toggle)
+        elif event.type == MOUSEBUTTONDOWN:
+            current_time = time.time()
+            if current_time - last_click_time > click_cooldown:
+                last_click_time = current_time
+                mouse_click_pos = event.pos
+        
         if campaign_map:
             haven_town_button.is_clicked(event)
         elif haven_town:
@@ -80,7 +93,8 @@ while running:
             pass
 
     if battle_sequence:
-        battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, grid_toggle, no_grid_movement_toggle)
+        battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle)
+        mouse_click_pos = False
     elif haven_town:
         background = pygame.image.load("./assets_webp/Haven_city.webp")
         background = pygame.transform.smoothscale(background, screen.get_size())

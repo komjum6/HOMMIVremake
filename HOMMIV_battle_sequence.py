@@ -97,6 +97,7 @@ def get_sprite_images(active_sprite_name):
     directions_4_files = ["ne", "nw", "se", "sw"]
     directions_8_files = ["ne", "e", "se", "s", "sw", "w", "nw", "n"]
 
+    # TODO make a function to load a JSON with all the action types, so it's not hardcoded anymore
     action_types = {
         "attack": f"attack/actor_sequence.{active_sprite_name}.attack.",
         "fidget": f"fidget/actor_sequence.{active_sprite_name}.fidget.",
@@ -160,6 +161,7 @@ class AnimatedSprite(pygame.sprite.Sprite):
         self.animation_time = len(self.images) / FPS
         self.action_change = True
         self.played_once = False
+        self.path = None
         self.current_time = 0
 
     @property
@@ -172,7 +174,7 @@ class AnimatedSprite(pygame.sprite.Sprite):
 
     def update(self):
         self.current_time += clock.get_time() / 1000.0
-        if self.sprite_action == "walk":
+        if self.sprite_action == "walk" and not self.path:
             if self.sprite_direction == "n":
                 self.rect.y -= self.sprite_speed
             if self.sprite_direction == "s":
@@ -193,6 +195,54 @@ class AnimatedSprite(pygame.sprite.Sprite):
             if self.sprite_direction == "sw":
                 self.rect.x -= self.sprite_speed
                 self.rect.y += self.sprite_speed
+                
+        # A path to walk to if there is one
+        if self.sprite_action == "walk" and self.path:
+            if self.path:
+                next_pos = self.path[0]
+                self.move_towards(next_pos)
+                if self.rect.center >= next_pos:
+                    self.path.pop(0)  # Remove the reached position
+                    print(self.path)
+                if self.path == []:
+                    change_selected_action(active_sprites_list, 0, "same direction", "wait")
+
+    def move_towards(self, target):
+        # Calculate the vector to the target
+        direction = (target[0] - self.rect.centerx, target[1] - self.rect.centery)
+        distance = (direction[0]**2 + direction[1]**2)**0.5
+        if distance != 0:
+            direction = (direction[0] / distance, direction[1] / distance)
+        
+        # Move the sprite
+        self.rect.centerx += direction[0] * self.sprite_speed
+        self.rect.centery += direction[1] * self.sprite_speed
+
+        # Update the sprite direction based on the movement
+        if direction[0] > 0 and direction[1] == 0:
+            self.sprite_direction = "e"
+            change_selected_action(active_sprites_list, 0, "e", "walk")
+        elif direction[0] < 0 and direction[1] == 0:
+            self.sprite_direction = "w"
+            change_selected_action(active_sprites_list, 0, "w", "walk")
+        elif direction[1] > 0 and direction[0] == 0:
+            self.sprite_direction = "s"
+            change_selected_action(active_sprites_list, 0, "s", "walk")
+        elif direction[1] < 0 and direction[0] == 0:
+            self.sprite_direction = "n"
+            change_selected_action(active_sprites_list, 0, "n", "walk")
+        elif direction[0] > 0 and direction[1] > 0:
+            self.sprite_direction = "se"
+            change_selected_action(active_sprites_list, 0, "se", "walk")
+        elif direction[0] < 0 and direction[1] < 0:
+            self.sprite_direction = "nw"
+            change_selected_action(active_sprites_list, 0, "nw", "walk")
+        elif direction[0] > 0 and direction[1] < 0:
+            self.sprite_direction = "ne"
+            change_selected_action(active_sprites_list, 0, "ne", "walk")
+        elif direction[0] < 0 and direction[1] > 0:
+            self.sprite_direction = "sw"
+            change_selected_action(active_sprites_list, 0, "sw", "walk")        
                 
         if self.sprite_action == "melee":
             
@@ -315,37 +365,50 @@ def battle_sequence_keys(event, RPG_mode_toggle):
 
 ##################################### Battle sequence update #####################################
 
-
-movement_range = 5
+# Initialize the environment once
+BE = None
 sprite_movement_list = []
+pathfinding_required = False
 
-# Function for updating the battle scene, background and the sprites
-def battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, grid_toggle, no_grid_movement_toggle):
+target_index = 6
 
-    # Draw background_battle_sequence
+def battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle):
+    global BE, sprite_movement_list, pathfinding_required
+
+    # Check if pathfinding is required
+    if mouse_click_pos:
+        pathfinding_required = True
+
+    # Draw background
     screen.blit(background_battle_sequence, (0, 0))
 
     # Draw the hexagonal grid
     if grid_toggle:
         draw_hex_grid()
 
-    # TODO: This fills BE every clock tick, it should only run at the beginning and check when something changes every clock tick
-    if no_grid_movement_toggle:
-        for index, (active_sprite, active_sprite_shadow) in enumerate(active_sprites_list):
-            sprite_movement_list.append(SpriteMovement(active_sprite.position[0], active_sprite.position[1], active_sprite.hitbox_radius))
-        
-        BE = BattleEnvironment(1920, 1080, sprite_movement_list) 
+    # Update the environment only when needed
+    if no_grid_movement_toggle and not BE:
+        sprite_movement_list = [
+            SpriteMovement(sprite.position[0], sprite.position[1], sprite.hitbox_radius)
+            for sprite, _ in active_sprites_list
+        ]
+        BE = BattleEnvironment(1920, 1080, sprite_movement_list)
 
     # Update sprites
     for index, (active_sprite, active_sprite_shadow) in enumerate(active_sprites_list):
-        
-        if no_grid_movement_toggle:
-            # Find the path
-            # TODO Calculate a path only when the user asks for it: if 
-            #a_star_search(BE, sprite_movement_list[index], sprite_movement_list[5], movement_range)
-            #print(path)
-            pass
-    
+        if no_grid_movement_toggle and pathfinding_required:
+            # Perform pathfinding when the user requests
+            target_index = 6
+            movement_range = 5
+            # If sprite selected
+            #path = a_star_search(BE, sprite_movement_list[index], sprite_movement_list[target_index], movement_range)
+            # If clicked on empty instead
+            path = a_star_search(BE, sprite_movement_list[index], SpriteMovement(mouse_click_pos[0], mouse_click_pos[1], 0), movement_range)
+            active_sprite.path = path  # Set the path for the sprite
+            active_sprite.sprite_action = "walk"
+            print(path)
+            pathfinding_required = False
+
         update_sprite_and_shadow(active_sprite, active_sprite_shadow)
 
         # Draw sprites and their shadows
