@@ -205,18 +205,27 @@ class AnimatedSprite(pygame.sprite.Sprite):
                     self.path.pop(0)  # Remove the reached position
                     print(self.path)
                 if self.path == []:
-                    change_selected_action(active_sprites_list, 0, "same direction", "wait")
+                    # TODO Temporary try except since the dwarf has only 4 wait directions for some reason
+                    try:
+                        change_selected_action(active_sprites_list, 0, "same direction", "wait")
+                    except:
+                        change_selected_action(active_sprites_list, 0, "sw", "wait")
 
     def move_towards(self, target):
         # Calculate the vector to the target
         direction = (target[0] - self.rect.centerx, target[1] - self.rect.centery)
         distance = (direction[0]**2 + direction[1]**2)**0.5
+        #print(distance)
         if distance != 0:
             direction = (direction[0] / distance, direction[1] / distance)
         
         # Move the sprite
-        self.rect.centerx += direction[0] * self.sprite_speed
-        self.rect.centery += direction[1] * self.sprite_speed
+        self.rect.centerx += min(direction[0] * self.sprite_speed, distance)
+        self.rect.centery += min(direction[1] * self.sprite_speed, distance)
+        
+        # When you change a path at least it won't walk back to the position the sprite gets 
+        # when the sprite object is instantiated
+        self.position = (self.rect.centerx, self.rect.centery)
 
         # Update the sprite direction based on the movement
         if direction[0] > 0 and direction[1] == 0:
@@ -257,7 +266,11 @@ class AnimatedSprite(pygame.sprite.Sprite):
             
             # If the melee animation played once, switch back to wait
             if self.played_once:   
-                change_selected_action(active_sprites_list, 0, "same direction", "wait")
+                # TODO Temporary try except since the dwarf has only 4 wait directions for some reason
+                try:
+                    change_selected_action(active_sprites_list, 0, "same direction", "wait")
+                except:
+                    change_selected_action(active_sprites_list, 0, "sw", "wait")
         
         # Cycling through the images for the animation sequences
         self.index = (self.index + 1) % len(self.images)
@@ -406,7 +419,11 @@ def battle_sequence_scene_update(screen, background_battle_sequence, active_spri
             path = a_star_search(BE, sprite_movement_list[index], SpriteMovement(mouse_click_pos[0], mouse_click_pos[1], 0), movement_range)
             active_sprite.path = path  # Set the path for the sprite
             active_sprite.sprite_action = "walk"
-            print(path)
+            
+            active_sprite_shadow.path = path  # Set the path for the sprite
+            active_sprite_shadow.sprite_action = "walk"
+            
+            #print(path)
             pathfinding_required = False
 
         update_sprite_and_shadow(active_sprite, active_sprite_shadow)

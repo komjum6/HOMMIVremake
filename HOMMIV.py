@@ -1,6 +1,7 @@
 import os
 import pygame
 from pygame.locals import *
+import pygame_gui
 # Note: This also loads all the variables from here in the global scope
 # In case the one reading this is puzzled by where some variables come from
 from HOMMIV_battle_sequence import *
@@ -63,6 +64,24 @@ def campaign_map_toggle():
 
 campaign_map_button = Button(100, 100, 300, 150, text="Campaign map", font_size=30, callback=campaign_map_toggle)
 
+class BuildingSprite(pygame.sprite.Sprite):
+    def __init__(self, name, position):
+        super(BuildingSprite, self).__init__()
+        self.name = name
+        self.position = position
+
+    def update(self, event_list):
+
+        for event in event_list:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if self.rect.collidepoint(event.pos):
+                    print(self.name + " is clicked")
+
+building_sprite = BuildingSprite("")
+building_group = pygame.sprite.Group(my_sprite)
+
+
+
 ############# End of UI ##############
 
 mouse_click_pos = False
@@ -84,6 +103,8 @@ while running:
             if current_time - last_click_time > click_cooldown:
                 last_click_time = current_time
                 mouse_click_pos = event.pos
+        
+        building_group.update(events)
         
         if campaign_map:
             haven_town_button.is_clicked(event)
