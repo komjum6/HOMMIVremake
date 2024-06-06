@@ -201,9 +201,10 @@ class AnimatedSprite(pygame.sprite.Sprite):
             if self.path:
                 next_pos = self.path[0]
                 self.move_towards(next_pos)
+                # TODO: The sprite should stop walking when reaching the next position and continue to the position after that in the next turn 
                 if self.rect.center >= next_pos:
                     self.path.pop(0)  # Remove the reached position
-                    print(self.path)
+                    #print(self.path)
                 if self.path == []:
                     # TODO Temporary try except since the dwarf has only 4 wait directions for some reason
                     try:
@@ -220,8 +221,8 @@ class AnimatedSprite(pygame.sprite.Sprite):
             direction = (direction[0] / distance, direction[1] / distance)
         
         # Move the sprite
-        self.rect.centerx += min(direction[0] * self.sprite_speed, distance)
-        self.rect.centery += min(direction[1] * self.sprite_speed, distance)
+        self.rect.centerx += min(direction[0] * self.sprite_speed, distance)*20
+        self.rect.centery += min(direction[1] * self.sprite_speed, distance)*20
         
         # When you change a path at least it won't walk back to the position the sprite gets 
         # when the sprite object is instantiated
@@ -300,7 +301,7 @@ def create_sprite(active_sprite_name, start_position, sprite_direction, sprite_a
     
     # Add these attributes to the battle_sequence_details.json later
     hitbox_radius = 2
-    movement_range = 5
+    movement_range = 20
     
     # Create an instance of AnimatedSprite for chosen action
     active_sprite = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_images, hitbox_radius, movement_range, actor_sequence_directory)
@@ -412,7 +413,7 @@ def battle_sequence_scene_update(screen, background_battle_sequence, active_spri
         if no_grid_movement_toggle and pathfinding_required:
             # Perform pathfinding when the user requests
             target_index = 6
-            movement_range = 5
+            movement_range = 20
             # If sprite selected
             #path = a_star_search(BE, sprite_movement_list[index], sprite_movement_list[target_index], movement_range)
             # If clicked on empty instead
