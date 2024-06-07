@@ -6,6 +6,7 @@ from pathing import *
 from config import *
 import json
 
+path_radius = 0
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 screen_height = 1080
 screen_width = 1920
@@ -418,7 +419,8 @@ def battle_sequence_scene_update(screen, background_battle_sequence, active_spri
             # If sprite selected
             #path = a_star_search(BE, sprite_movement_list[index], sprite_movement_list[target_index], movement_range)
             # If clicked on empty instead
-            path = a_star_search(BE, sprite_movement_list[index], SpriteMovement(mouse_click_pos[0], mouse_click_pos[1], 0), movement_range)
+            path = a_star_search(BE, SpriteMovement(active_sprite.position[0], active_sprite.position[1], path_radius),
+                                     SpriteMovement(mouse_click_pos[0], mouse_click_pos[1], path_radius), movement_range)
             active_sprite.path = path  # Set the path for the sprite
             active_sprite.sprite_action = "walk"
             
