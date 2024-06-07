@@ -9,6 +9,7 @@ import json
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 screen_height = 1080
 screen_width = 1920
+azure = pygame.color.Color("azure")
 FPS = 10
 clock = pygame.time.Clock()
 
@@ -429,6 +430,17 @@ def battle_sequence_scene_update(screen, background_battle_sequence, active_spri
 
         update_sprite_and_shadow(active_sprite, active_sprite_shadow)
 
+        # temporary offset to correct apparent position
+        offset_rect = active_sprite.rect.copy()
+        offset_rect.x -= 144    # manually found these values
+        offset_rect.y -= 136    # dwarf's final position is pretty accurate on my computer
+
+        # draw debug path
+        if grid_toggle:
+            if active_sprite.path is not None:
+                if len(active_sprite.path) > 1:
+                    pygame.draw.lines(screen, azure, False, active_sprite.path)
+
         # Draw sprites and their shadows
-        screen.blit(active_sprite.image, active_sprite.rect)
+        screen.blit(active_sprite.image, offset_rect)
         screen.blit(active_sprite_shadow.image, active_sprite_shadow.rect)
