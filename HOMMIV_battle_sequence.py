@@ -443,4 +443,4 @@ def battle_sequence_scene_update(screen, background_battle_sequence, active_spri
 
         # Draw sprites and their shadows
         screen.blit(active_sprite.image, offset_rect)
-        screen.blit(active_sprite_shadow.image, active_sprite_shadow.rect)
+        screen.blit(active_sprite_shadow.image, offset_rect)
