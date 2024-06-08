@@ -6,6 +6,7 @@ import pygame_gui
 # In case the one reading this is puzzled by where some variables come from
 from HOMMIV_battle_sequence import *
 from HOMMIV_campaign_ui_widgets import *
+from HOMMIV_parse_ui_town import *
 import json
 import time
 
@@ -14,8 +15,12 @@ pygame.init()
 
 pygame.display.set_caption("HOMMIV Remake")
 
-campaign_map = False #True
-battle_sequence = True #False
+resolution = (1920, 1080)
+window_surface = pygame.display.set_mode(resolution)
+manager = pygame_gui.UIManager(resolution, 'theme.json')
+
+campaign_map = True
+battle_sequence = False
 haven_town = False
 academy_town = False
 necropolis_town = False
@@ -23,7 +28,7 @@ asylum_town = False
 preserve_town = False
 stronghold_town = False
 
-grid_toggle = False
+grid_toggle = True
 no_grid_movement_toggle = True
 
 RPG_mode_toggle = True
@@ -71,6 +76,7 @@ mouse_click_pos = False
 # Main loop
 running = True
 while running:
+    time_delta = clock.tick(60) / 1000.0
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
@@ -85,6 +91,8 @@ while running:
             if current_time - last_click_time > click_cooldown:
                 last_click_time = current_time
                 mouse_click_pos = event.pos
+                
+        manager.process_events(event)
         
         if campaign_map:
             haven_town_button.is_clicked(event)
@@ -93,38 +101,34 @@ while running:
         else:
             pass
 
+    manager.update(time_delta)
+
     if battle_sequence:
         battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle)
         mouse_click_pos = False
     elif haven_town:
-        background = pygame.image.load("./assets_webp/Haven_city.webp")
-        background = pygame.transform.smoothscale(background, screen.get_size())
-        screen.blit(background, (0, 0))
+        button_list, label_list = load_ui(ui_file_path, manager)
+        manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif academy_town:
-        background = pygame.image.load("./assets_webp/Academy_city.webp")
-        background = pygame.transform.smoothscale(background, screen.get_size())
-        screen.blit(background, (0, 0))
+        button_list, label_list = load_ui(ui_file_path, manager)
+        manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif necropolis_town:
-        background = pygame.image.load("./assets_webp/Necropolis_city.webp")
-        background = pygame.transform.smoothscale(background, screen.get_size())
-        screen.blit(background, (0, 0))
+        button_list, label_list = load_ui(ui_file_path, manager)
+        manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif asylum_town:
-        background = pygame.image.load("./assets_webp/Asylum_city.webp")
-        background = pygame.transform.smoothscale(background, screen.get_size())
-        screen.blit(background, (0, 0))
+        button_list, label_list = load_ui(ui_file_path, manager)
+        manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif preserve_town:
-        background = pygame.image.load("./assets_webp/Preserve_city.webp")
-        background = pygame.transform.smoothscale(background, screen.get_size())
-        screen.blit(background, (0, 0))
+        button_list, label_list = load_ui(ui_file_path, manager)
+        manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif stronghold_town:
-        background = pygame.image.load("./assets_webp/Stronghold_city.webp")
-        background = pygame.transform.smoothscale(background, screen.get_size())
-        screen.blit(background, (0, 0))
+        button_list, label_list = load_ui(ui_file_path, manager)
+        manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     else:
 

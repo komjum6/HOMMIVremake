@@ -1,0 +1,21 @@
+{
+    "#button": {
+        "normal_bg": "#00000000",
+        "hovered_bg": "#00000000",
+        "active_bg": "#00000000",
+        "normal_border": "#00000000",
+        "hovered_border": "#00000000",
+        "active_border": "#00000000",
+        "normal_text": "#00000000",
+        "hovered_text": "#00000000",
+        "active_text": "#00000000",
+        "border_width": 1,
+        "shadow_width": 0,
+        "font": {
+            "name": "fira_code",
+            "size": 14,
+            "bold": false,
+            "italic": false
+        }
+    }
+}
