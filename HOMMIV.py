@@ -107,27 +107,27 @@ while running:
         battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle)
         mouse_click_pos = False
     elif haven_town:
-        button_list, label_list = load_ui(ui_file_path, manager)
+        load_ui(ui_file_path, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif academy_town:
-        button_list, label_list = load_ui(ui_file_path, manager)
+        load_ui(ui_file_path, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif necropolis_town:
-        button_list, label_list = load_ui(ui_file_path, manager)
+        load_ui(ui_file_path, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif asylum_town:
-        button_list, label_list = load_ui(ui_file_path, manager)
+        load_ui(ui_file_path, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif preserve_town:
-        button_list, label_list = load_ui(ui_file_path, manager)
+        load_ui(ui_file_path, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif stronghold_town:
-        button_list, label_list = load_ui(ui_file_path, manager)
+        load_ui(ui_file_path, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     else:

@@ -75,11 +75,13 @@ def load_ui(file_path, manager):
             button_text = text if text is not None else ''
             button = TransparentButton(geometry, button_text, manager, f"#{widget_name}")
             button_list.append(button)
-            
-    return button_list, label_list
+    
+    #print(label_list)
+    #print(button_list)
+    #return button_list, label_list
 
 # Load the .ui file
-ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVtown.ui'  # Replace with your .ui file path
+ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIVtown.ui'  # Replace with your .ui file path
 
 
 #for button in button_list:
