@@ -10,6 +10,12 @@ from HOMMIV_parse_ui_town import *
 import json
 import time
 
+towns = ["Life", "Nature", "Chaos", "Death", "Order", "Might"]
+biomes = ["dirt", "grass", "rough", "sand", "snow", "subterranean", "swamp", "volcanic"]
+
+town = towns[0]
+biome = biomes[3]
+
 # Initialize Pygame
 pygame.init()
 
@@ -107,27 +113,33 @@ while running:
         battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle)
         mouse_click_pos = False
     elif haven_town:
-        load_ui(ui_file_path, manager)
+        ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
+        load_ui(ui_file_path, town, biome, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif academy_town:
-        load_ui(ui_file_path, manager)
+        ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
+        load_ui(ui_file_path, town, biome, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif necropolis_town:
-        load_ui(ui_file_path, manager)
+        ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
+        load_ui(ui_file_path, town, biome, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif asylum_town:
-        load_ui(ui_file_path, manager)
+        ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
+        load_ui(ui_file_path, town, biome, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif preserve_town:
-        load_ui(ui_file_path, manager)
+        ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
+        load_ui(ui_file_path, town, biome, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     elif stronghold_town:
-        load_ui(ui_file_path, manager)
+        ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
+        load_ui(ui_file_path, town, biome, manager)
         manager.draw_ui(window_surface)
         campaign_map_button.draw(screen)
     else:

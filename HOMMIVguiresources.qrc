@@ -1,77 +1,125 @@
 <RCC>
   <qresource prefix="towns">
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Army_Display.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Background.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Border.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature icon holders.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Damage.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Health.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Mana.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Move.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_name.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Portrait_Rings.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_1.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_2.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_3.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_4.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_5.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_6.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_7.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_8.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Highlighted.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Pressed.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Released.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Highlighted.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Pressed.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Released.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Crystal.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Crystal_Number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Damage_Icon.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_1.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_2.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_3.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_4.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_5.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_6.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gems.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gems_Number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gold.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gold_Number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Health_ICon.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/hero_class.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Lord_Border.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Lord_Portrait.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/luck.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mana_Icon.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Highlighted.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Pressed.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Released.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mercury.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mercury_Number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/morale.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Highlighted.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Pressed.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Released.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Icon.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Highlighted.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Pressed.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Released.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/OK_Button.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Ore.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Ore_number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Scrollbar.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Single_Border.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Single_Split_Button.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Skill_Icon_Background.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Split_Button.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/statistics_scroll.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Sulfur.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Sulfur_Number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_Image.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_list.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_Name.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Wood.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Wood_Number.png</file>
-    <file>../../Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.grass_1920/background.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.grass_1920/background.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Army_Display.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Background.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Border.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature icon holders.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Damage.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Health.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Mana.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Move.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_name.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Portrait_Rings.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_1.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_2.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_3.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_4.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_5.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_6.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_7.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_8.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Highlighted.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Pressed.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Released.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Highlighted.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Pressed.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Released.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Crystal.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Crystal_Number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Damage_Icon.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_1.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_2.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_3.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_4.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_5.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_6.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gems.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gems_Number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gold.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gold_Number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Health_ICon.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/hero_class.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Lord_Border.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Lord_Portrait.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/luck.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mana_Icon.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Highlighted.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Pressed.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Released.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mercury.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mercury_Number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/morale.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Highlighted.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Pressed.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Released.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Icon.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Highlighted.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Pressed.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Released.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/OK_Button.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Ore.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Ore_number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Scrollbar.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Single_Border.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Single_Split_Button.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Skill_Icon_Background.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Split_Button.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/statistics_scroll.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Sulfur.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Sulfur_Number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_Image.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_list.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_Name.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Wood.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Wood_Number.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/barrow mound shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/barrow mound.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/blacksmith shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/blacksmith.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/caravan shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Caravan.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/castle shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/castle.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/cemetary shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/cemetery.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Chaos library Shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Chaos library.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/citadel shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/citadel.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/city hall shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/city hall.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/dragon graveyard shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/dragon graveyard.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/fort shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/fort.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/frame.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/grail shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/grail.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/kennels shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/kennels.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 1 shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 1.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 2 shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 2.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 3 shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 3.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 4 shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 4.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Mage guild 5 shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mage guild 5.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Mansion shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/mansion.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Necromancy Amplifier shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/Necromancy Amplifier.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/order library shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/order library.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/prison shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/prison.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/shipyard shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/shipyard.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/skeleton transformer shadow.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/skeleton transformer.png</file>
+    <file>C:/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/death/layers.town.death.layout_1920/spawn pit.png</file>
   </qresource>
 </RCC>

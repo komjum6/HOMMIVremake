@@ -1,0 +1,1851 @@
+<?xml version="1.0" ?>
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+      </rect>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <widget class="QLabel" name="label_background_dirt">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.dirt_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_grass">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.grass_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_rough">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.rough_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_sand">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.sand_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_snow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.snow_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_subterranean">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.subterranean_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_swamp">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.swamp_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_background_volcanic">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>C:\Users\Justin\Downloads\Heroes_assets_pngs\layers\town\life\layers.town.life.volcanic_1920\background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Army_Display">
+        <property name="geometry">
+          <rect>
+            <x>736</x>
+            <y>880</y>
+            <width>693</width>
+            <height>140</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Army_Display.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Background">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>864</y>
+            <width>1920</width>
+            <height>212</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Border">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>842</y>
+            <width>1920</width>
+            <height>22</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Border.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature icon holders">
+        <property name="geometry">
+          <rect>
+            <x>1489</x>
+            <y>881</y>
+            <width>376</width>
+            <height>144</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature icon holders.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Damage">
+        <property name="geometry">
+          <rect>
+            <x>1579</x>
+            <y>974</y>
+            <width>54</width>
+            <height>17</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Damage.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Health">
+        <property name="geometry">
+          <rect>
+            <x>1518</x>
+            <y>974</y>
+            <width>54</width>
+            <height>17</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Health.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Mana">
+        <property name="geometry">
+          <rect>
+            <x>1699</x>
+            <y>974</y>
+            <width>54</width>
+            <height>17</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Mana.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Move">
+        <property name="geometry">
+          <rect>
+            <x>1639</x>
+            <y>974</y>
+            <width>54</width>
+            <height>17</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Move.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_name">
+        <property name="geometry">
+          <rect>
+            <x>1519</x>
+            <y>891</y>
+            <width>238</width>
+            <height>19</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_name.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Portrait_Rings">
+        <property name="geometry">
+          <rect>
+            <x>364</x>
+            <y>866</y>
+            <width>216</width>
+            <height>208</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Portrait_Rings.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_1">
+        <property name="geometry">
+          <rect>
+            <x>1510</x>
+            <y>895</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_1.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_2">
+        <property name="geometry">
+          <rect>
+            <x>1596</x>
+            <y>895</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_2.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_3">
+        <property name="geometry">
+          <rect>
+            <x>1681</x>
+            <y>894</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_3.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_4">
+        <property name="geometry">
+          <rect>
+            <x>1767</x>
+            <y>894</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_4.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_5">
+        <property name="geometry">
+          <rect>
+            <x>1510</x>
+            <y>955</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_5.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_6">
+        <property name="geometry">
+          <rect>
+            <x>1596</x>
+            <y>955</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_6.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_7">
+        <property name="geometry">
+          <rect>
+            <x>1681</x>
+            <y>955</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_7.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_creature_skill_8">
+        <property name="geometry">
+          <rect>
+            <x>1768</x>
+            <y>955</y>
+            <width>79</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/creature_skill_8.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Skills_Button_Highlighted">
+        <property name="geometry">
+          <rect>
+            <x>1672</x>
+            <y>1021</y>
+            <width>102</width>
+            <height>48</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Highlighted.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Skills_Button_Pressed">
+        <property name="geometry">
+          <rect>
+            <x>1672</x>
+            <y>1021</y>
+            <width>102</width>
+            <height>48</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Pressed.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Skills_Button_Released">
+        <property name="geometry">
+          <rect>
+            <x>1672</x>
+            <y>1021</y>
+            <width>102</width>
+            <height>48</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Skills_Button_Released.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Stats_Button_Highlighted">
+        <property name="geometry">
+          <rect>
+            <x>1564</x>
+            <y>1023</y>
+            <width>99</width>
+            <height>46</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Highlighted.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Stats_Button_Pressed">
+        <property name="geometry">
+          <rect>
+            <x>1564</x>
+            <y>1023</y>
+            <width>99</width>
+            <height>46</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Pressed.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Creature_Stats_Button_Released">
+        <property name="geometry">
+          <rect>
+            <x>1564</x>
+            <y>1023</y>
+            <width>99</width>
+            <height>46</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Creature_Stats_Button_Released.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Crystal">
+        <property name="geometry">
+          <rect>
+            <x>1066</x>
+            <y>1022</y>
+            <width>51</width>
+            <height>34</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Crystal.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Crystal_Number">
+        <property name="geometry">
+          <rect>
+            <x>1059</x>
+            <y>1053</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Crystal_Number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Damage_Icon">
+        <property name="geometry">
+          <rect>
+            <x>1578</x>
+            <y>932</y>
+            <width>58</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Damage_Icon.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_dwelling_1">
+        <property name="geometry">
+          <rect>
+            <x>385</x>
+            <y>882</y>
+            <width>78</width>
+            <height>54</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_1.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_dwelling_2">
+        <property name="geometry">
+          <rect>
+            <x>481</x>
+            <y>882</y>
+            <width>78</width>
+            <height>54</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_2.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_dwelling_3">
+        <property name="geometry">
+          <rect>
+            <x>385</x>
+            <y>943</y>
+            <width>78</width>
+            <height>54</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_3.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_dwelling_4">
+        <property name="geometry">
+          <rect>
+            <x>480</x>
+            <y>943</y>
+            <width>78</width>
+            <height>54</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_4.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_dwelling_5">
+        <property name="geometry">
+          <rect>
+            <x>384</x>
+            <y>1004</y>
+            <width>78</width>
+            <height>54</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_5.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_dwelling_6">
+        <property name="geometry">
+          <rect>
+            <x>480</x>
+            <y>1005</y>
+            <width>78</width>
+            <height>54</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/dwelling_6.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Gems">
+        <property name="geometry">
+          <rect>
+            <x>1147</x>
+            <y>1024</y>
+            <width>61</width>
+            <height>29</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gems.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Gems_Number">
+        <property name="geometry">
+          <rect>
+            <x>1147</x>
+            <y>1053</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gems_Number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Gold">
+        <property name="geometry">
+          <rect>
+            <x>793</x>
+            <y>1015</y>
+            <width>66</width>
+            <height>43</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gold.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Gold_Number">
+        <property name="geometry">
+          <rect>
+            <x>793</x>
+            <y>1053</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Gold_Number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Health_ICon">
+        <property name="geometry">
+          <rect>
+            <x>1516</x>
+            <y>932</y>
+            <width>58</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Health_ICon.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_hero_class">
+        <property name="geometry">
+          <rect>
+            <x>1519</x>
+            <y>911</y>
+            <width>237</width>
+            <height>19</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/hero_class.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Lord_Border">
+        <property name="geometry">
+          <rect>
+            <x>1300</x>
+            <y>836</y>
+            <width>274</width>
+            <height>70</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Lord_Border.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Lord_Portrait">
+        <property name="geometry">
+          <rect>
+            <x>1380</x>
+            <y>844</y>
+            <width>102</width>
+            <height>64</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Lord_Portrait.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_luck">
+        <property name="geometry">
+          <rect>
+            <x>1759</x>
+            <y>959</y>
+            <width>57</width>
+            <height>38</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/luck.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Mana_Icon">
+        <property name="geometry">
+          <rect>
+            <x>1699</x>
+            <y>932</y>
+            <width>58</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mana_Icon.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Menu_Button_Highlighted">
+        <property name="geometry">
+          <rect>
+            <x>604</x>
+            <y>1001</y>
+            <width>114</width>
+            <height>46</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Highlighted.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Menu_Button_Pressed">
+        <property name="geometry">
+          <rect>
+            <x>604</x>
+            <y>1001</y>
+            <width>114</width>
+            <height>46</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Pressed.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Menu_Button_Released">
+        <property name="geometry">
+          <rect>
+            <x>604</x>
+            <y>1001</y>
+            <width>114</width>
+            <height>46</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Menu_Button_Released.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Mercury">
+        <property name="geometry">
+          <rect>
+            <x>1242</x>
+            <y>1020</y>
+            <width>55</width>
+            <height>37</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mercury.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Mercury_Number">
+        <property name="geometry">
+          <rect>
+            <x>1236</x>
+            <y>1053</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Mercury_Number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_morale">
+        <property name="geometry">
+          <rect>
+            <x>1759</x>
+            <y>914</y>
+            <width>57</width>
+            <height>38</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/morale.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Down_Highlighted">
+        <property name="geometry">
+          <rect>
+            <x>604</x>
+            <y>886</y>
+            <width>108</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Highlighted.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Down_Pressed">
+        <property name="geometry">
+          <rect>
+            <x>604</x>
+            <y>886</y>
+            <width>108</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Pressed.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Down_Released">
+        <property name="geometry">
+          <rect>
+            <x>604</x>
+            <y>886</y>
+            <width>108</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Down_Released.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Icon">
+        <property name="geometry">
+          <rect>
+            <x>1638</x>
+            <y>932</y>
+            <width>58</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Icon.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Up_Highlighted">
+        <property name="geometry">
+          <rect>
+            <x>601</x>
+            <y>945</y>
+            <width>111</width>
+            <height>49</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Highlighted.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Up_Pressed">
+        <property name="geometry">
+          <rect>
+            <x>601</x>
+            <y>945</y>
+            <width>111</width>
+            <height>49</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Pressed.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Move_Up_Released">
+        <property name="geometry">
+          <rect>
+            <x>601</x>
+            <y>945</y>
+            <width>111</width>
+            <height>49</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Move_Up_Released.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_OK_Button">
+        <property name="geometry">
+          <rect>
+            <x>1789</x>
+            <y>1023</y>
+            <width>97</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/OK_Button.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Ore">
+        <property name="geometry">
+          <rect>
+            <x>972</x>
+            <y>1019</y>
+            <width>58</width>
+            <height>36</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Ore.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Ore_number">
+        <property name="geometry">
+          <rect>
+            <x>972</x>
+            <y>1053</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Ore_number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Scrollbar">
+        <property name="geometry">
+          <rect>
+            <x>34</x>
+            <y>874</y>
+            <width>57</width>
+            <height>191</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Scrollbar.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Single_Border">
+        <property name="geometry">
+          <rect>
+            <x>763</x>
+            <y>886</y>
+            <width>624</width>
+            <height>23</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Single_Border.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Single_Split_Button">
+        <property name="geometry">
+          <rect>
+            <x>1369</x>
+            <y>923</y>
+            <width>94</width>
+            <height>45</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Single_Split_Button.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Skill_Icon_Background">
+        <property name="geometry">
+          <rect>
+            <x>1488</x>
+            <y>879</y>
+            <width>379</width>
+            <height>141</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Skill_Icon_Background.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Split_Button">
+        <property name="geometry">
+          <rect>
+            <x>1357</x>
+            <y>914</y>
+            <width>94</width>
+            <height>86</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Split_Button.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_statistics_scroll">
+        <property name="geometry">
+          <rect>
+            <x>1458</x>
+            <y>859</y>
+            <width>421</width>
+            <height>169</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/statistics_scroll.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Sulfur">
+        <property name="geometry">
+          <rect>
+            <x>1021</x>
+            <y>1006</y>
+            <width>376</width>
+            <height>49</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Sulfur.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Sulfur_Number">
+        <property name="geometry">
+          <rect>
+            <x>1327</x>
+            <y>1052</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Sulfur_Number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Town_Image">
+        <property name="geometry">
+          <rect>
+            <x>1</x>
+            <y>0</y>
+            <width>1918</width>
+            <height>866</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_Image.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Town_list">
+        <property name="geometry">
+          <rect>
+            <x>120</x>
+            <y>871</y>
+            <width>235</width>
+            <height>197</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_list.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Town_Name">
+        <property name="geometry">
+          <rect>
+            <x>612</x>
+            <y>848</y>
+            <width>490</width>
+            <height>24</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Town_Name.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Wood">
+        <property name="geometry">
+          <rect>
+            <x>880</x>
+            <y>1021</y>
+            <width>69</width>
+            <height>35</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Wood.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Wood_Number">
+        <property name="geometry">
+          <rect>
+            <x>885</x>
+            <y>1054</y>
+            <width>70</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/layers.town.1920/Wood_Number.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Abbey">
+        <property name="geometry">
+          <rect>
+            <x>1020</x>
+            <y>296</y>
+            <width>204</width>
+            <height>153</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Abbey.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Abbey shadow">
+        <property name="geometry">
+          <rect>
+            <x>900</x>
+            <y>385</y>
+            <width>162</width>
+            <height>59</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Abbey shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Altar of Light">
+        <property name="geometry">
+          <rect>
+            <x>664</x>
+            <y>226</y>
+            <width>327</width>
+            <height>241</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Altar of Light.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Altar of Light Shadow">
+        <property name="geometry">
+          <rect>
+            <x>433</x>
+            <y>395</y>
+            <width>388</width>
+            <height>76</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Altar of Light Shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_archery range">
+        <property name="geometry">
+          <rect>
+            <x>256</x>
+            <y>662</y>
+            <width>262</width>
+            <height>118</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/archery range.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Archery range shadow">
+        <property name="geometry">
+          <rect>
+            <x>202</x>
+            <y>711</y>
+            <width>258</width>
+            <height>68</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Archery range shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_ballista works">
+        <property name="geometry">
+          <rect>
+            <x>1</x>
+            <y>433</y>
+            <width>384</width>
+            <height>130</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/ballista works.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_ballista works shadow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>517</y>
+            <width>76</width>
+            <height>24</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/ballista works shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_barracks">
+        <property name="geometry">
+          <rect>
+            <x>312</x>
+            <y>349</y>
+            <width>303</width>
+            <height>165</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/barracks.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_barracks shadow">
+        <property name="geometry">
+          <rect>
+            <x>160</x>
+            <y>473</y>
+            <width>207</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/barracks shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_blacksmith">
+        <property name="geometry">
+          <rect>
+            <x>1455</x>
+            <y>515</y>
+            <width>175</width>
+            <height>130</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/blacksmith.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_blacksmith shadow">
+        <property name="geometry">
+          <rect>
+            <x>1305</x>
+            <y>610</y>
+            <width>271</width>
+            <height>34</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/blacksmith shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_caravan">
+        <property name="geometry">
+          <rect>
+            <x>1339</x>
+            <y>329</y>
+            <width>178</width>
+            <height>112</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/caravan.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_caravan shadow">
+        <property name="geometry">
+          <rect>
+            <x>1156</x>
+            <y>422</y>
+            <width>301</width>
+            <height>18</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/caravan shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_castle">
+        <property name="geometry">
+          <rect>
+            <x>1096</x>
+            <y>195</y>
+            <width>705</width>
+            <height>124</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/castle.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_castle shadow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>0</width>
+            <height>0</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/castle shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_citadel">
+        <property name="geometry">
+          <rect>
+            <x>1096</x>
+            <y>210</y>
+            <width>705</width>
+            <height>109</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/citadel.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_citadel shadow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>0</width>
+            <height>0</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/citadel shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_city hall">
+        <property name="geometry">
+          <rect>
+            <x>336</x>
+            <y>205</y>
+            <width>376</width>
+            <height>124</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/city hall.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_city hall shadow">
+        <property name="geometry">
+          <rect>
+            <x>247</x>
+            <y>302</y>
+            <width>120</width>
+            <height>26</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/city hall shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_fort">
+        <property name="geometry">
+          <rect>
+            <x>1200</x>
+            <y>223</y>
+            <width>537</width>
+            <height>90</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/fort.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_fort shadow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>0</width>
+            <height>0</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/fort shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_frame">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>867</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/frame.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_grail">
+        <property name="geometry">
+          <rect>
+            <x>64</x>
+            <y>194</y>
+            <width>220</width>
+            <height>147</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/grail.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Grail Shadow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>327</y>
+            <width>85</width>
+            <height>12</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Grail Shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_guardhouse">
+        <property name="geometry">
+          <rect>
+            <x>22</x>
+            <y>428</y>
+            <width>304</width>
+            <height>139</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/guardhouse.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_guardhouse shadow">
+        <property name="geometry">
+          <rect>
+            <x>0</x>
+            <y>511</y>
+            <width>79</width>
+            <height>34</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/guardhouse shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_knight chapter">
+        <property name="geometry">
+          <rect>
+            <x>606</x>
+            <y>310</y>
+            <width>420</width>
+            <height>174</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/knight chapter.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_knight chapter shadow">
+        <property name="geometry">
+          <rect>
+            <x>418</x>
+            <y>412</y>
+            <width>397</width>
+            <height>74</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/knight chapter shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 1">
+        <property name="geometry">
+          <rect>
+            <x>1146</x>
+            <y>562</y>
+            <width>255</width>
+            <height>121</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 1.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 1 shadow">
+        <property name="geometry">
+          <rect>
+            <x>1014</x>
+            <y>627</y>
+            <width>286</width>
+            <height>56</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 1 shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 2">
+        <property name="geometry">
+          <rect>
+            <x>1146</x>
+            <y>506</y>
+            <width>255</width>
+            <height>177</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 2.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 2 shadow">
+        <property name="geometry">
+          <rect>
+            <x>892</x>
+            <y>618</y>
+            <width>408</width>
+            <height>66</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 2 shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 3">
+        <property name="geometry">
+          <rect>
+            <x>1146</x>
+            <y>459</y>
+            <width>255</width>
+            <height>225</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 3.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 3 shadow">
+        <property name="geometry">
+          <rect>
+            <x>798</x>
+            <y>610</y>
+            <width>502</width>
+            <height>73</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 3 shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 4">
+        <property name="geometry">
+          <rect>
+            <x>1146</x>
+            <y>413</y>
+            <width>255</width>
+            <height>271</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 4.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 4 shadow">
+        <property name="geometry">
+          <rect>
+            <x>733</x>
+            <y>595</y>
+            <width>567</width>
+            <height>88</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 4 shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_mage guild 5">
+        <property name="geometry">
+          <rect>
+            <x>1146</x>
+            <y>315</y>
+            <width>255</width>
+            <height>369</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/mage guild 5.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Mage guild 5 shadow">
+        <property name="geometry">
+          <rect>
+            <x>648</x>
+            <y>571</y>
+            <width>654</width>
+            <height>113</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Mage guild 5 shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_monastary">
+        <property name="geometry">
+          <rect>
+            <x>298</x>
+            <y>388</y>
+            <width>397</width>
+            <height>132</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/monastary.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_monastary shadow">
+        <property name="geometry">
+          <rect>
+            <x>145</x>
+            <y>480</y>
+            <width>282</width>
+            <height>39</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/monastary shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_nature library">
+        <property name="geometry">
+          <rect>
+            <x>1273</x>
+            <y>595</y>
+            <width>234</width>
+            <height>136</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/nature library.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_nature library shadow">
+        <property name="geometry">
+          <rect>
+            <x>1110</x>
+            <y>676</y>
+            <width>217</width>
+            <height>43</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/nature library shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_order library">
+        <property name="geometry">
+          <rect>
+            <x>958</x>
+            <y>548</y>
+            <width>184</width>
+            <height>136</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/order library.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_order library shadow">
+        <property name="geometry">
+          <rect>
+            <x>801</x>
+            <y>643</y>
+            <width>195</width>
+            <height>38</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/order library shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_prison">
+        <property name="geometry">
+          <rect>
+            <x>1602</x>
+            <y>344</y>
+            <width>289</width>
+            <height>100</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/prison.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_prison shadow">
+        <property name="geometry">
+          <rect>
+            <x>1498</x>
+            <y>399</y>
+            <width>222</width>
+            <height>41</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/prison shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_seminary">
+        <property name="geometry">
+          <rect>
+            <x>547</x>
+            <y>583</y>
+            <width>246</width>
+            <height>141</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/seminary.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Seminary Shadow">
+        <property name="geometry">
+          <rect>
+            <x>406</x>
+            <y>669</y>
+            <width>351</width>
+            <height>55</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Seminary Shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_shipyard">
+        <property name="geometry">
+          <rect>
+            <x>1338</x>
+            <y>548</y>
+            <width>582</width>
+            <height>318</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/shipyard.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_shipyard shadow">
+        <property name="geometry">
+          <rect>
+            <x>1207</x>
+            <y>729</y>
+            <width>447</width>
+            <height>137</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/shipyard shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_squire guild">
+        <property name="geometry">
+          <rect>
+            <x>45</x>
+            <y>750</y>
+            <width>207</width>
+            <height>76</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/squire guild.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_squire guild shadow">
+        <property name="geometry">
+          <rect>
+            <x>9</x>
+            <y>783</y>
+            <width>240</width>
+            <height>42</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/squire guild shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_stables">
+        <property name="geometry">
+          <rect>
+            <x>1639</x>
+            <y>520</y>
+            <width>280</width>
+            <height>113</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/stables.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_stables shadow">
+        <property name="geometry">
+          <rect>
+            <x>1570</x>
+            <y>565</y>
+            <width>349</width>
+            <height>68</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/stables shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_tavern">
+        <property name="geometry">
+          <rect>
+            <x>753</x>
+            <y>633</y>
+            <width>303</width>
+            <height>234</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/tavern.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Tavern shadow">
+        <property name="geometry">
+          <rect>
+            <x>600</x>
+            <y>786</y>
+            <width>223</width>
+            <height>65</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Tavern shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_Town hall">
+        <property name="geometry">
+          <rect>
+            <x>336</x>
+            <y>223</y>
+            <width>376</width>
+            <height>105</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/Town hall.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_town hall shadow">
+        <property name="geometry">
+          <rect>
+            <x>252</x>
+            <y>306</y>
+            <width>349</width>
+            <height>22</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/town hall shadow.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_village hall">
+        <property name="geometry">
+          <rect>
+            <x>406</x>
+            <y>225</y>
+            <width>193</width>
+            <height>96</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/village hall.png</pixmap>
+        </property>
+      </widget>
+      <widget class="QLabel" name="label_village hall shadow">
+        <property name="geometry">
+          <rect>
+            <x>295</x>
+            <y>307</y>
+            <width>139</width>
+            <height>11</height>
+          </rect>
+        </property>
+        <property name="pixmap">
+          <pixmap>:/towns/Users/Justin/Downloads/Heroes_assets_pngs/layers/town/life/layers.town.life.layout_1920/village hall shadow.png</pixmap>
+        </property>
+      </widget>
+    </widget>
+  </widget>
+  <resources/>
+  <connections/>
+</ui>

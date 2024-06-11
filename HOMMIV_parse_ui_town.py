@@ -31,7 +31,7 @@ class CustomImageLabel:
         self.label.image = pygame.transform.scale(self.image, self.dimension)
 
 # Parse the .ui file from QtDesigner and create widgets
-def load_ui(file_path, manager):
+def load_ui(file_path, town, biome, manager):
     tree = ET.parse(file_path)
     root = tree.getroot()
     label_list = list()
@@ -53,10 +53,15 @@ def load_ui(file_path, manager):
         if widget_class == 'QLabel':
             pixmap = widget.find('property[@name="pixmap"]/pixmap')
             if pixmap is not None:
-                image_path = pixmap.text.replace(':/towns', 'C:').replace('/', os.sep)
+                image_path = pixmap.text.replace(':/towns', 'C:').replace('/', os.sep).replace('C:\C:\\','C:\\')
                 image_name = os.path.basename(image_path).split('.')[0]  # Use the filename without extension as object_id
                 if os.path.isabs(image_path):
-                    label = CustomImageLabel(image_path, geometry, manager, f"#{image_name}")
+                    # This try except was made due to the fully black images
+                    try:
+                        label = CustomImageLabel(image_path, geometry, manager, f"#{image_name}")
+                    except Exception as e:
+                        #print(e)
+                        pass
                 else:
                     print(f"Warning: Path '{image_path}' is not absolute.")
             else:
@@ -80,12 +85,8 @@ def load_ui(file_path, manager):
     #print(button_list)
     #return button_list, label_list
 
-# Load the .ui file
-ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIVtown.ui'  # Replace with your .ui file path
-
-
-#for button in button_list:
-#    print(button.object_id)
-    
-#for label in label_list:
-#    print(label.object_id)
+    #for button in button_list:
+    #    print(button.object_id)
+        
+    #for label in label_list:
+    #    print(label.object_id)
