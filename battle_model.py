@@ -1,12 +1,16 @@
+from typing import Any
 from data_types import Creature
 
 class StatusEffect:
     """Very unfinished"""
-    def __init__(self, name: str, visible: bool, is_good: bool, conflicts_with: list[str], effect) -> None:
+    def __init__(self, name: str, effect: Any, visible: bool, is_good: bool, conflicts_with: list[str] | None = None) -> None:
         self.name = name
         self.visible = visible
         self.is_good = is_good
-        self.conflicts_with = conflicts_with
+        if conflicts_with is not None:
+            self.conflicts_with = conflicts_with
+        else:
+            self.conflicts_with = []
         self.effect = effect    # maybe dictionary, maybe callback function
 
 
@@ -28,22 +32,14 @@ class Unit:
         self.shots = c.shots
         self.abilities = c.abilities
         self.spells = c.spells
-        self.statuses = []
+        self.statuses: list[StatusEffect] = []
 
     def add_status(self, status: StatusEffect) -> None:
         # remove conflicting effects
-        to_remove = []
-        for i in status.conflicts_with:
-            if i in self.statuses:
-                to_remove.append(i)
-        
-        try:
-            for i in to_remove:
-                self.statuses.remove(i)
-        except ValueError:
-            print(f"Attempted to remove non-existent status effect \"{i}\" from {self.creature.name}")
+        statuses = [x for x in self.statuses if x.name not in status.conflicts_with]
         # actually add it
-        self.statuses.append(status)
+        statuses.append(status)
+        self.statuses = statuses
 
     def update_state(self):
         """Apply effects, re-calculate all stat multipliers, etc"""
