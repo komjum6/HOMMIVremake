@@ -51,8 +51,7 @@ class Unit:
 
 
 def apply_melee_attack(source: Unit, target: Unit):
-    # What were the formulas for this again?
-    #Attack x melee dmg / Defense 
+    # damage = Attack x melee dmg / Defense
    
     morale_probability = abs(source.morale * .1)
     luck_probability = abs(target.luck * .1)
@@ -71,7 +70,14 @@ def apply_melee_attack(source: Unit, target: Unit):
 
     #calculate dmg range
     min_damage, max_damage = source.damage
-    damage = random.randint(min_damage, max_damage)
+    damage = 0.0
+    if source.amount <= 10:
+        for _ in range(source.amount):
+            damage += random.randint(min_damage, max_damage)
+    else:
+        multiplier = source.amount / 10
+        for _ in range(10):
+            damage += multiplier * random.randint(min_damage, max_damage)
     
 
     #calculating damage
@@ -83,6 +89,7 @@ def apply_melee_attack(source: Unit, target: Unit):
         if target.luck < 0:
             damage_dealt *= 1.5
 
+    damage_dealt = int(damage_dealt)    # damage rounding may not be exactly the same in original game
     
     for ability in source.abilities:
         if isinstance(ability, CombatAbility):
