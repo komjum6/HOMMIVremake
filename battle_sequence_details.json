@@ -4,43 +4,51 @@
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [100, 200]
+      "start_position": [5, 35],
+      "sprite_size": 3
     },
     "zombie": {
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [50, 150]
+      "start_position": [10, 34],
+      "sprite_size": 3
+
     },
     "Efreet": {
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [300, 180]
+      "start_position": [15, 33],
+      "sprite_size": 3
     },
     "Genie": {
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [250, 220]
+      "start_position": [3, 31],
+      "sprite_size": 3
     },
     "Gargoyle": {
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [180, 120]
+      "start_position": [8, 30],
+      "sprite_size": 3
     },
     "hydra": {
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [400, 250]
+      "start_position": [13, 29],
+      "sprite_size": 3
     },
     "Ice Demon": {
       "active_sprite_direction": "ne",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [320, 300]
+      "start_position": [18, 300],
+      "sprite_size": 3
     }
   },
   "player_2": {
@@ -48,43 +56,50 @@
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [600, 180]
+      "start_position": [5, 5],
+      "sprite_size": 3
     },
     "Leprechaun": {
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [550, 220]
+      "start_position": [10, 6],
+      "sprite_size": 3
     },
     "Mermaid": {
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [700, 250]
+      "start_position": [15, 7],
+      "sprite_size": 3
     },
     "Medusa": {
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [650, 300]
+      "start_position": [3, 9],
+      "sprite_size": 3
     },
     "Monk": {
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [780, 120]
+      "start_position": [8, 10],
+      "sprite_size": 3
     },
     "Naga": {
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [720, 150]
+      "start_position": [13, 11],
+      "sprite_size": 3
     },
     "Nightmare": {
       "active_sprite_direction": "sw",
       "active_sprite_action": "wait",
       "active_sprite_speed": 2,
-      "start_position": [850, 180]
-    }
+      "start_position": [18, 12],
+      "sprite_size": 3
+  }
   }
 }

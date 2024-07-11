@@ -1,62 +1,93 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from enum import Enum
 
 
-ALIGNMENT_CHAOS = 0
-ALIGNMENT_NATURE = 1
-ALIGNMENT_LIFE = 2
-ALIGNMENT_ORDER = 3
-ALIGNMENT_DEATH = 4
-ALIGNMENT_MIGHT = 5
+
+
+class Alignment(Enum):
+    CHAOS = 0
+    NATURE = 1
+    LIFE = 2
+    ORDER = 3
+    DEATH = 4
+    MIGHT = 5
+
+class UnitSize(Enum):
+    SMALL = 0   #3x3
+    BIG = 1     #5x5 with 3x3 edges
+
+@dataclass
+class BattleMaps:
+    #Stores battlefield sprites
+    data:any = None
+    
+
+    #grid location, not pixel location
+    team1_positions:list[tuple[int,int]] = None
+    team2_positions:list[tuple[int,int]] = None
+
+@dataclass 
+class BattleTile:
+    terrain:str = ""
+    occupied:bool = False
 
 @dataclass
 class Resources:
-    gold = 0
-    wood = 0
-    ore = 0
-    gems = 0
-    crystal = 0
-    sulfur = 0
-    mercury = 0
+    gold:int = 0
+    wood:int = 0
+    ore:int = 0
+    gems:int = 0
+    crystal:int = 0
+    sulfur:int = 0
+    mercury:int = 0
+
+
 
 
 @dataclass
 class Creature:
     """Base definition of a creature"""
-    name = ""
-    description = ""
-    data = None    # should contain sprites, animations, etc (or a reference to them?)
-    level = 0
-    alignment = ALIGNMENT_CHAOS     # placeholder
+    name:str = ""
+    description:str = ""
+    data:any = None    # should contain sprites, animations, etc (or a reference to them?)
+    level:int = 0
+    alignment:Alignment = None  # placeholder
 
-    cost = Resources()
-    growth = 0
-    experience_value = 0
+    cost:Resources = None
+    growth:int = 0
+    experience_value:int = 0
 
-    damage = [0, 0]
-    hp = 0
-    melee_attack = 0
-    ranged_attack = 0
-    melee_defense = 0
-    ranged_defense = 0     #Added ranged and melee subdivison
-    move = 0
-    speed = 0
-    shots = 0
-    abilities = []
-    spells = []
-    spell_power = 0
-    mana = 0
-    luck = 0              #Added morale and luck
-    morale = 0
+    size:int = 0
+    damage:tuple = field(default_factory=tuple)
+    hp:int = 0
+    melee_attack:int = 0
+    ranged_attack:int = 0
+    melee_defense:int = 0
+    ranged_defense:int = 0   #Added ranged and melee subdivison
+    move:int = 0
+    speed:int = 0
+    shots:int = 0
+    abilities:list = field(default_factory=list)
+    spells:list = field(default_factory=list)
+    spell_power:int = 0
+    mana:int = 0
+    luck:int = 0             #Added morale and luck
+    morale:int = 0
 
+
+@dataclass
+class StatusModifier:
+    name:str = ""
+    description:str = ""
 
 #Ability class split up into two definition, conditional abilities like the pirates or flying
 #On attack abilities like curse
 #How to implement abilities like charge
 @dataclass
 class Abilities:
-    name = ""
-    description = ""
-    data = None
+    name:str = ""
+    description:str = ""
+    data:any = None
     def apply(self, attacker, defender):
         """Default apply method."""
         pass
