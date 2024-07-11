@@ -4,11 +4,17 @@ from pygame.locals import *
 import pygame_gui
 # Note: This also loads all the variables from here in the global scope
 # In case the one reading this is puzzled by where some variables come from
-from HOMMIV_battle_sequence import *
+from HOMMIV_battle_sequence2 import *
 from HOMMIV_campaign_ui_widgets import *
 from HOMMIV_parse_ui_town import *
 import json
 import time
+
+# Set the SDL video driver to Wayland
+os.environ['SDL_VIDEODRIVER'] = 'x11'
+
+# Bypass audio issues if not using audio
+os.environ['SDL_AUDIODRIVER'] = 'dummy'
 
 towns = ["Life", "Nature", "Chaos", "Death", "Order", "Might"]
 biomes = ["dirt", "grass", "rough", "sand", "snow", "subterranean", "swamp", "volcanic"]
@@ -16,17 +22,27 @@ biomes = ["dirt", "grass", "rough", "sand", "snow", "subterranean", "swamp", "vo
 town = towns[0]
 biome = biomes[3]
 
+
 # Initialize Pygame
 pygame.init()
 
 pygame.display.set_caption("HOMMIV Remake")
 
+#screen_info = pygame.display.Info()
+#screen_height = screen_info.current_h
+#screen_width = screen_info.current_w
+#print(screen_width)
+#print(screen_height)
+#screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
+
 resolution = (1920, 1080)
-window_surface = pygame.display.set_mode(resolution)
+#resolution = (screen_width, screen_height)
+screen = pygame.display.set_mode(resolution, pygame.RESIZABLE)
 manager = pygame_gui.UIManager(resolution, 'theme.json')
 
-campaign_map = True
-battle_sequence = False
+
+campaign_map = False
+battle_sequence = True
 haven_town = False
 academy_town = False
 necropolis_town = False
@@ -49,7 +65,7 @@ def haven_town_toggle():
     global campaign_map
     global haven_town
     campaign_map = False
-    haven_town = True
+    haven_town = False
 
 haven_town_button = Button(100, 100, 300, 150, text="Haven Town", font_size=30, callback=haven_town_toggle)
 
@@ -64,8 +80,8 @@ def campaign_map_toggle():
     global stronghold_town
     global haven_town
     
-    campaign_map = True
-    battle_sequence = False
+    campaign_map = False
+    battle_sequence = True
     haven_town = False
     academy_town = False
     necropolis_town = False
@@ -90,8 +106,8 @@ while running:
         elif event.type == KEYDOWN:
             if event.key == K_ESCAPE:
                 running = False
-            if battle_sequence:
-                battle_sequence_keys(event, RPG_mode_toggle)
+            #if battle_sequence:
+                #battle_sequence_keys(event, RPG_mode_toggle)
         elif event.type == MOUSEBUTTONDOWN:
             current_time = time.time()
             if current_time - last_click_time > click_cooldown:
@@ -110,7 +126,8 @@ while running:
     manager.update(time_delta)
 
     if battle_sequence:
-        battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle)
+        #battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle)
+        battle_sequence_run()
         mouse_click_pos = False
     elif haven_town:
         ui_file_path = r'D:\Blender_video_music\Games\HOMMIVremake\HOMMIVremake\HOMMIV{0}town.ui'.format(town)  # Replace with your .ui file path
@@ -157,6 +174,7 @@ while running:
 
     # Display the screen
     pygame.display.flip()
+    
     clock.tick(FPS)  # Frame rate
 
 # Quit Pygame

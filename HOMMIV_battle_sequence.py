@@ -1,7 +1,8 @@
 import os
 import pygame
 from pygame.locals import *
-from create_hex_grid import *
+#from create_hex_grid import *
+from create_isometric_grid import *
 from pathing import *
 from config import *
 import json
@@ -136,7 +137,7 @@ def get_sprite_images(active_sprite_name):
         for direction in directions:
             folder_path = os.path.join(base_directory, f"{path}{direction}")
             if os.path.exists(folder_path):
-                
+                #print(folder_path)
                 store_action_type = action_type + direction
                 folder_path = os.path.join(actor_sequence_directory, store_action_type)
                 image_files = load_images_from_folder(folder_path)
@@ -279,39 +280,73 @@ class AnimatedSprite(pygame.sprite.Sprite):
         self.index = (self.index + 1) % len(self.images)
         self.image = self.images[self.index]
 
+
+
+######################################################################333
+
+
+
+
 # Loading background of the battle sequence
 try:
-    background_battle_sequence = pygame.image.load(battlefield_preset_map_directory)
+    background_battle_sequence = pygame.image.load(battlefield_preset_map_directory).convert_alpha()
 except FileNotFoundError as e:
     print("Heroes_assets_pngs folder is empty or not found. You may want to update config.json with its location.")
     print(f"Missing file: {battlefield_preset_map_directory}")
     exit()
+backdrop_position = ((1980 - background_battle_sequence.get_width()) // 2, (1080 - background_battle_sequence.get_height()) // 2)
 
-background_battle_sequence = pygame.transform.smoothscale(background_battle_sequence, screen.get_size())
+#background_battle_sequence = pygame.transform.smoothscale(background_battle_sequence, screen.get_size())
+
+
+
+
 
 # Function to change the action of the sprite
 def change_sprite_action(actor_sequence_directory, active_sprite_action, active_sprite_name, active_sprite_direction):
     # Load images for chosen action
     active_sprite_images, active_sprite_shadow_images  = load_images_from_folder(os.path.join(actor_sequence_directory, "combat/{0}/actor_sequence.{1}.combat.{0}.{2}".format(active_sprite_action, active_sprite_name, active_sprite_direction)))
-    
+    print(active_sprite_images)
     return active_sprite_images, active_sprite_shadow_images
+
+
+
+
+
+
+
 
 # Function to create a sprite object and its shadow object
 def create_sprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, actor_sequence_directory):
-
+    
     active_sprite_images, active_sprite_shadow_images = change_sprite_action(actor_sequence_directory, active_sprite_action, active_sprite_name, active_sprite_direction)
     
     # Add these attributes to the battle_sequence_details.json later
     hitbox_radius = 2
     movement_range = 20
     
+    
     # Create an instance of AnimatedSprite for chosen action
     active_sprite = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_images, hitbox_radius, movement_range, actor_sequence_directory)
-
+    #active_sprite.pixel_position = pixel_position
+    
     # Create an instance of AnimatedSprite for shadow images
     active_sprite_shadow = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_shadow_images, hitbox_radius, movement_range, actor_sequence_directory)
-
+    #active_sprite_shadow.pixel_position = pixel_position
+    #print(active_sprite.grid_position)
+    #print(active_sprite.pixel_position)
     return active_sprite, active_sprite_shadow
+
+
+
+
+    # Create an instance of AnimatedSprite for chosen action
+    #active_sprite = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_images, hitbox_radius, movement_range, actor_sequence_directory)
+    
+    # Create an instance of AnimatedSprite for shadow images
+    #active_sprite_shadow = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_shadow_images, hitbox_radius, movement_range, actor_sequence_directory)
+
+    #return active_sprite, active_sprite_shadow
 
 # Create an empty dictionary to store sprite info
 active_sprites_list = []
@@ -396,11 +431,11 @@ def battle_sequence_scene_update(screen, background_battle_sequence, active_spri
         pathfinding_required = True
 
     # Draw background
-    screen.blit(background_battle_sequence, (0, 0))
+    screen.blit(background_battle_sequence, backdrop_position)
 
-    # Draw the hexagonal grid
+    # Draw grid
     if grid_toggle:
-        draw_hex_grid()
+        draw_isometric_grid()
 
     # Update the environment only when needed
     if no_grid_movement_toggle and not BE:

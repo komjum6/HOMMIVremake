@@ -3,8 +3,8 @@ import math
 
 ##################################### Hex grid #####################################
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen_height = 1080
-screen_width = 1920
+screen_height = 1024
+screen_width = 1180
 
 # Colors for the grid and hex
 #grid_color = (255, 255, 255)
