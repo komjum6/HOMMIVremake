@@ -1,0 +1,44 @@
+{
+    "desert_landscape": {
+        "scale": 0.9,
+        "max_height": 4,
+        "noise_scale": 0.08,
+        "smoothing_passes": 2,
+        "biome_percentages": {
+            "Pablo_img": 0.4,    
+            "pavement": 0.2,
+            "pavement2": 0.2,    
+            "grass": 0.2        
+        },
+        "cactus_density": 0.3,
+        "cactus_scale": 0.3
+    },
+    "rolling_hills": {
+        "scale": 0.85,
+        "max_height": 6,
+        "noise_scale": 0.12,
+        "smoothing_passes": 3,
+        "biome_percentages": {
+            "grass": 0.5,
+            "Pablo_img": 0.2,
+            "pavement": 0.15,
+            "pavement2": 0.15
+        },
+        "cactus_density": 0.2,
+        "cactus_scale": 0.25
+    },
+    "rocky_terrain": {
+        "scale": 0.95,
+        "max_height": 8,
+        "noise_scale": 0.15,
+        "smoothing_passes": 1,
+        "biome_percentages": {
+            "pavement": 0.4,
+            "pavement2": 0.3,
+            "Pablo_img": 0.2,
+            "grass": 0.1
+        },
+        "cactus_density": 0.15,
+        "cactus_scale": 0.35
+    }
+}

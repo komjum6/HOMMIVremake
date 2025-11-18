@@ -1,88 +1,109 @@
 import os
 import pygame
 from pygame.locals import *
-#from create_hex_grid import *
-from create_isometric_grid import *
-from pathing import *
-from config import *
+from create_hex_grid import * 
+from pathing import *         
+from config import *          
 import json
 
+# Global variables, initialized to None or default values
 path_radius = 0
-screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen_height = 1080
+screen_height = 1080 
 screen_width = 1920
-azure = pygame.color.Color("azure")
+azure = None # Initialize lazily
 FPS = 10
-clock = pygame.time.Clock()
+clock = None 
+background_battle_sequence = None 
 
-#active_sprites_names = ["zombie", "Mummy"]
+# Internal flag to track if pygame components are initialized within this module
+_pygame_components_initialized = False
 
-############################## 
+def _initialize_pygame_components_in_battle_sequence():
+    """Initializes pygame components required by HOMMIV_battle_sequence.py, without creating a display."""
+    global clock, azure, _pygame_components_initialized
+
+    if _pygame_components_initialized:
+        return
+
+    # Ensure pygame is initialized if it hasn't been by the main Kivy app
+    if not pygame.get_init():
+        pygame.init()
+        print("HOMMIV_battle_sequence: pygame.init() called internally.")
+    
+    # Initialize font module for text rendering
+    if not pygame.font.get_init():
+        pygame.font.init()
+        print("HOMMIV_battle_sequence: pygame.font.init() called internally.")
+
+    clock = pygame.time.Clock()
+    azure = pygame.color.Color("azure") # MOVED HERE
+    _pygame_components_initialized = True
+    print("HOMMIV_battle_sequence: Internal pygame components initialized.")
+
+def _initialize_pygame_components_in_battle_sequence():
+    """Initializes pygame components required by HOMMIV_battle_sequence.py, without creating a display."""
+    global clock, azure, _pygame_components_initialized
+
+    if _pygame_components_initialized:
+        return
+
+    # Ensure pygame is initialized (should already be done by caller with dummy driver)
+    if not pygame.get_init():
+        # If not initialized, do NOT set SDL_VIDEODRIVER here - it's too late
+        pygame.init()
+        print("HOMMIV_battle_sequence: pygame.init() called (should already be in dummy mode).")
+    
+    # Initialize font module for text rendering
+    if not pygame.font.get_init():
+        pygame.font.init()
+        print("HOMMIV_battle_sequence: pygame.font.init() called internally.")
+
+    clock = pygame.time.Clock()
+    azure = pygame.color.Color("azure")
+    _pygame_components_initialized = True
+    print("HOMMIV_battle_sequence: Internal pygame components initialized.")
 
 
-# Read the JSON data from the file
+# Read the JSON data from the file (this is fine at module level as it doesn't use pygame)
 with open('battle_sequence_details.json', 'r') as json_file:
     battle_data = json.load(json_file)
 
 config = load_config()
 
-# Create dictionaries for player 1 and player 2 sprites
 player_1_sprites = battle_data.get('player_1', {})
 player_2_sprites = battle_data.get('player_2', {})
 
-# Extract sprite attributes for player 1
 player_1_sprite_names = []
 player_1_attributes = []
 for sprite_name, sprite_attrs in player_1_sprites.items():
     player_1_sprite_names.append(sprite_name)
     player_1_attributes.append(sprite_attrs)
 
-# Extract sprite attributes for player 2
 player_2_sprite_names = []
 player_2_attributes = []
 for sprite_name, sprite_attrs in player_2_sprites.items():
     player_2_sprite_names.append(sprite_name)
     player_2_attributes.append(sprite_attrs)
 
-# Combining the collective sprites for both players, the reason it was seperated at the beginning is because
-# we want to make sure we can cast spells on only one group later    
 sprites_names = player_1_sprite_names + player_2_sprite_names
 total_attributes = player_1_attributes + player_2_attributes
 
-sprite_directions, sprite_actions, sprite_speeds, start_positions = [a['active_sprite_direction'] for a in total_attributes], [a['active_sprite_action'] for a in total_attributes], [a['active_sprite_speed'] for a in total_attributes], [a['start_position'] for a in total_attributes]
+sprite_directions, sprite_actions, sprite_speeds, start_positions = \
+    [a['active_sprite_direction'] for a in total_attributes], \
+    [a['active_sprite_action'] for a in total_attributes], \
+    [a['active_sprite_speed'] for a in total_attributes], \
+    [a['start_position'] for a in total_attributes]
 
-#active_sprite_direction = "ne"
-#active_sprite_action = "walk"
-#active_sprite_speed = 2
-#start_position = [SCREEN_WIDTH // 4, SCREEN_HEIGHT // 2]
-#sprite_direction, sprite_action, sprite_speed = active_sprite_direction, active_sprite_action, active_sprite_speed
-
-#active_sprite_direction_1 = "sw"
-#active_sprite_action_1 = "walk"
-#active_sprite_speed_1 = 2
-#start_position_1 = [SCREEN_WIDTH // 2 - 200, SCREEN_HEIGHT * 0.25]
-#sprite_direction_1, sprite_action_1, sprite_speed_1 = active_sprite_direction_1, active_sprite_action_1, active_sprite_speed_1
-
-#active_sprite_directions = [active_sprite_direction, active_sprite_direction_1]
-#active_sprite_actions = [active_sprite_action, active_sprite_action_1]
-#active_sprite_speeds = [active_sprite_speed, active_sprite_speed_1]
-#start_positions = [start_position, start_position_1]
-#sprite_directions, sprite_actions, sprite_speeds = [sprite_direction, sprite_direction_1], [sprite_action, sprite_action_1], [sprite_speed, sprite_speed_1]
-
-##############################
-
-# Directories
+# Directories (fine at module level)
 base_directory = config["base_directory"]
 active_background_battle_sequence = "Death/battlefield_preset_map.Death.single/backdrop.png"
-battlefield_preset_map_directory = os.path.join(base_directory, "battlefield_preset_map/{0}".format(active_background_battle_sequence))  # Update with your actual path
-    
+battlefield_preset_map_directory = os.path.join(base_directory, "battlefield_preset_map/{0}".format(active_background_battle_sequence))
 
-# Function to load images from a given folder
+# Function to load images from a given folder (uses pygame, so needs pygame.init() first)
 def load_images_from_folder(folder_path):
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
     frames = []
     shadows = []
-
-    # Load frame and shadow images
     for file_name in sorted(os.listdir(folder_path)):
         if file_name.startswith('frame') and file_name.endswith('.png'):
             frame_path = os.path.join(folder_path, file_name)
@@ -90,17 +111,13 @@ def load_images_from_folder(folder_path):
         elif file_name.startswith('shadow') and file_name.endswith('.png'):
             shadow_path = os.path.join(folder_path, file_name)
             shadows.append(pygame.image.load(shadow_path).convert_alpha())
-
     return frames, shadows
 
-# Function to get all the actions from the loaded images
+# Function to get all the actions from the loaded images (uses load_images_from_folder)
 def get_sprite_images(active_sprite_name):
-
-    # Define the directions for each action type
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
     directions_4_files = ["ne", "nw", "se", "sw"]
     directions_8_files = ["ne", "e", "se", "s", "sw", "w", "nw", "n"]
-
-    # TODO make a function to load a JSON with all the action types, so it's not hardcoded anymore
     action_types = {
         "attack": f"attack/actor_sequence.{active_sprite_name}.attack.",
         "fidget": f"fidget/actor_sequence.{active_sprite_name}.fidget.",
@@ -120,40 +137,33 @@ def get_sprite_images(active_sprite_name):
         "combat_wait": f"combat/wait/actor_sequence.{active_sprite_name}.combat.wait.",
         "combat_walk": f"combat/walk/actor_sequence.{active_sprite_name}.combat.walk.",
     }
-
-    # Create an empty dictionary to store action types, their image files and directions
     action_images_dict = {}
-
-    # Iterate through each action type
     for action_type, path in action_types.items():
-    
-        # Determine the directions based on the action type (some don't have all 8 directions)
         if action_type in ["combat_die", "combat_fidget", "combat_flinch", "combat_wait"]:
             directions = directions_4_files
         else:
             directions = directions_8_files
-    
-        # Store the action types with their image files and directions in a dictionary
         for direction in directions:
-            folder_path = os.path.join(base_directory, f"{path}{direction}")
+            actor_sequence_directory = os.path.join(base_directory, f"actor_sequence/{active_sprite_name}") 
+            folder_path = os.path.join(actor_sequence_directory, f"{path}{direction}") 
             if os.path.exists(folder_path):
-                #print(folder_path)
                 store_action_type = action_type + direction
-                folder_path = os.path.join(actor_sequence_directory, store_action_type)
                 image_files = load_images_from_folder(folder_path)
                 action_images_dict[store_action_type] = [image_files, directions]
             
     return action_images_dict
 
-# Create an AnimatedSprite class
+# Create an AnimatedSprite class (uses pygame.sprite.Sprite, so needs pygame.init())
 class AnimatedSprite(pygame.sprite.Sprite):
-    def __init__(self, sprite_name, position, sprite_direction, sprite_action, sprite_speed, images, hitbox_radius, movement_range, actor_sequence_directory):
+    def __init__(self, sprite_name, position, sprite_direction, sprite_action, sprite_speed, images_tuple, hitbox_radius, movement_range, actor_sequence_directory):
         super(AnimatedSprite, self).__init__()
+        _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
         self.actor_sequence_directory = actor_sequence_directory
         self.sprite_name = sprite_name
-        self.images = images
+        self.frames = images_tuple[0] 
+        self.shadows = images_tuple[1] 
         self.index = 0
-        self.image = images[self.index]
+        self.image = self.frames[self.index] if self.frames else pygame.Surface((1,1)) 
         self.position = position
         self.sprite_speed = sprite_speed
         self.rect = self.image.get_rect(center=self.position)
@@ -161,7 +171,7 @@ class AnimatedSprite(pygame.sprite.Sprite):
         self.sprite_action = sprite_action
         self.hitbox_radius = hitbox_radius
         self.movement_range = movement_range
-        self.animation_time = len(self.images) / FPS
+        self.animation_time = len(self.frames) / FPS if self.frames else 0
         self.action_change = True
         self.played_once = False
         self.path = None
@@ -176,7 +186,10 @@ class AnimatedSprite(pygame.sprite.Sprite):
         self._sprite_action = new_action
 
     def update(self):
-        self.current_time += clock.get_time() / 1000.0
+        global clock 
+        if clock: 
+            self.current_time += clock.get_time() / 1000.0
+        
         if self.sprite_action == "walk" and not self.path:
             if self.sprite_direction == "n":
                 self.rect.y -= self.sprite_speed
@@ -199,175 +212,97 @@ class AnimatedSprite(pygame.sprite.Sprite):
                 self.rect.x -= self.sprite_speed
                 self.rect.y += self.sprite_speed
                 
-        # A path to walk to if there is one
         if self.sprite_action == "walk" and self.path:
             if self.path:
                 next_pos = self.path[0]
                 self.move_towards(next_pos)
-                # TODO: The sprite should stop walking when reaching the next position and continue to the position after that in the next turn 
-                if self.rect.center >= next_pos:
-                    self.path.pop(0)  # Remove the reached position
-                    #print(self.path)
-                if self.path == []:
-                    # TODO Temporary try except since the dwarf has only 4 wait directions for some reason
+                if self.rect.centerx >= next_pos[0] - self.sprite_speed and \
+                   self.rect.centerx <= next_pos[0] + self.sprite_speed and \
+                   self.rect.centery >= next_pos[1] - self.sprite_speed and \
+                   self.rect.centery <= next_pos[1] + self.sprite_speed:
+                    self.path.pop(0)
+                if not self.path: 
                     try:
                         change_selected_action(active_sprites_list, 0, "same direction", "wait")
                     except:
                         change_selected_action(active_sprites_list, 0, "sw", "wait")
 
     def move_towards(self, target):
-        # Calculate the vector to the target
         direction = (target[0] - self.rect.centerx, target[1] - self.rect.centery)
         distance = (direction[0]**2 + direction[1]**2)**0.5
-        #print(distance)
         if distance != 0:
             direction = (direction[0] / distance, direction[1] / distance)
         
-        # Move the sprite
-        self.rect.centerx += min(direction[0] * self.sprite_speed, distance)*20
-        self.rect.centery += min(direction[1] * self.sprite_speed, distance)*20
+        self.rect.centerx += int(direction[0] * self.sprite_speed) 
+        self.rect.centery += int(direction[1] * self.sprite_speed)
         
-        # When you change a path at least it won't walk back to the position the sprite gets 
-        # when the sprite object is instantiated
         self.position = (self.rect.centerx, self.rect.centery)
 
-        # Update the sprite direction based on the movement
         if direction[0] > 0 and direction[1] == 0:
             self.sprite_direction = "e"
-            change_selected_action(active_sprites_list, 0, "e", "walk")
         elif direction[0] < 0 and direction[1] == 0:
             self.sprite_direction = "w"
-            change_selected_action(active_sprites_list, 0, "w", "walk")
         elif direction[1] > 0 and direction[0] == 0:
             self.sprite_direction = "s"
-            change_selected_action(active_sprites_list, 0, "s", "walk")
         elif direction[1] < 0 and direction[0] == 0:
             self.sprite_direction = "n"
-            change_selected_action(active_sprites_list, 0, "n", "walk")
         elif direction[0] > 0 and direction[1] > 0:
             self.sprite_direction = "se"
-            change_selected_action(active_sprites_list, 0, "se", "walk")
         elif direction[0] < 0 and direction[1] < 0:
             self.sprite_direction = "nw"
-            change_selected_action(active_sprites_list, 0, "nw", "walk")
         elif direction[0] > 0 and direction[1] < 0:
             self.sprite_direction = "ne"
-            change_selected_action(active_sprites_list, 0, "ne", "walk")
         elif direction[0] < 0 and direction[1] > 0:
-            self.sprite_direction = "sw"
-            change_selected_action(active_sprites_list, 0, "sw", "walk")        
+            self.sprite_direction = "sw"        
                 
         if self.sprite_action == "melee":
-            
-            # This helps with making sure the sprite attacks only once, but can attack again later
             if self.action_change:
                 self.current_time = 0
                 self.action_change = False
             
-            # This is to make sure the sprite attacks only once
             if self.current_time >= self.animation_time and not self.played_once:
                 self.played_once = True
             
-            # If the melee animation played once, switch back to wait
             if self.played_once:   
-                # TODO Temporary try except since the dwarf has only 4 wait directions for some reason
                 try:
                     change_selected_action(active_sprites_list, 0, "same direction", "wait")
                 except:
                     change_selected_action(active_sprites_list, 0, "sw", "wait")
         
-        # Cycling through the images for the animation sequences
-        self.index = (self.index + 1) % len(self.images)
-        self.image = self.images[self.index]
+        if self.frames: 
+            self.index = (self.index + 1) % len(self.frames)
+            self.image = self.frames[self.index]
+        else:
+            self.image = pygame.Surface((1,1)) 
 
+def load_all_sprites():
+    global active_sprites_list
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
+    active_sprites_list = [] 
+    for active_sprite_name, active_sprite_direction, active_sprite_action, active_sprite_speed, start_position, _, _, _ in zip(sprites_names, sprite_directions, sprite_actions, sprite_speeds, start_positions, sprite_directions, sprite_actions, sprite_speeds):
+        actor_sequence_directory = os.path.join(base_directory, f"actor_sequence/{active_sprite_name}")
+        action_images_dict = get_sprite_images(active_sprite_name)
 
+        default_action_direction_key = active_sprite_action + active_sprite_direction
+        
+        if default_action_direction_key in action_images_dict:
+            images_for_sprite = action_images_dict[default_action_direction_key][0] 
+        else:
+            print(f"Warning: No images found for {active_sprite_name} {default_action_direction_key}. Using empty surfaces.")
+            images_for_sprite = ([], []) 
 
-######################################################################333
+        active_sprite = AnimatedSprite(active_sprite_name, start_position, active_sprite_direction, active_sprite_action, active_sprite_speed, images_for_sprite, 2, 20, actor_sequence_directory)
+        active_sprites_list.append((active_sprite, active_sprite)) 
+    print("HOMMIV_battle_sequence: All sprites loaded.")
 
-
-
-
-# Loading background of the battle sequence
-try:
-    background_battle_sequence = pygame.image.load(battlefield_preset_map_directory).convert_alpha()
-except FileNotFoundError as e:
-    print("Heroes_assets_pngs folder is empty or not found. You may want to update config.json with its location.")
-    print(f"Missing file: {battlefield_preset_map_directory}")
-    exit()
-backdrop_position = ((1980 - background_battle_sequence.get_width()) // 2, (1080 - background_battle_sequence.get_height()) // 2)
-
-#background_battle_sequence = pygame.transform.smoothscale(background_battle_sequence, screen.get_size())
-
-
-
-
-
-# Function to change the action of the sprite
-def change_sprite_action(actor_sequence_directory, active_sprite_action, active_sprite_name, active_sprite_direction):
-    # Load images for chosen action
-    active_sprite_images, active_sprite_shadow_images  = load_images_from_folder(os.path.join(actor_sequence_directory, "combat/{0}/actor_sequence.{1}.combat.{0}.{2}".format(active_sprite_action, active_sprite_name, active_sprite_direction)))
-    print(active_sprite_images)
-    return active_sprite_images, active_sprite_shadow_images
-
-
-
-
-
-
-
-
-# Function to create a sprite object and its shadow object
-def create_sprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, actor_sequence_directory):
-    
-    active_sprite_images, active_sprite_shadow_images = change_sprite_action(actor_sequence_directory, active_sprite_action, active_sprite_name, active_sprite_direction)
-    
-    # Add these attributes to the battle_sequence_details.json later
-    hitbox_radius = 2
-    movement_range = 20
-    
-    
-    # Create an instance of AnimatedSprite for chosen action
-    active_sprite = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_images, hitbox_radius, movement_range, actor_sequence_directory)
-    #active_sprite.pixel_position = pixel_position
-    
-    # Create an instance of AnimatedSprite for shadow images
-    active_sprite_shadow = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_shadow_images, hitbox_radius, movement_range, actor_sequence_directory)
-    #active_sprite_shadow.pixel_position = pixel_position
-    #print(active_sprite.grid_position)
-    #print(active_sprite.pixel_position)
-    return active_sprite, active_sprite_shadow
-
-
-
-
-    # Create an instance of AnimatedSprite for chosen action
-    #active_sprite = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_images, hitbox_radius, movement_range, actor_sequence_directory)
-    
-    # Create an instance of AnimatedSprite for shadow images
-    #active_sprite_shadow = AnimatedSprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, active_sprite_shadow_images, hitbox_radius, movement_range, actor_sequence_directory)
-
-    #return active_sprite, active_sprite_shadow
-
-# Create an empty dictionary to store sprite info
-active_sprites_list = []
-
-# A big loop for all the data about the sprites
-for active_sprite_name, active_sprite_direction, active_sprite_action, active_sprite_speed, start_position, sprite_direction, sprite_action, sprite_speed in zip(sprites_names, sprite_directions, sprite_actions, sprite_speeds, start_positions, sprite_directions, sprite_actions, sprite_speeds):
-    # Define the actor_sequence directory where your sprite files are located
-    actor_sequence_directory = os.path.join(base_directory, "actor_sequence/{0}".format(active_sprite_name))  # Update with your actual path
-    action_images_dict = get_sprite_images(active_sprite_name)
-    active_sprite, active_sprite_shadow = create_sprite(active_sprite_name, start_position, sprite_direction, sprite_action, sprite_speed, actor_sequence_directory)
-    active_sprites_list.append((active_sprite, active_sprite_shadow))
-
-# Updating sprite and shadow
 def update_sprite_and_shadow(active_sprite, active_sprite_shadow):
     active_sprite.update()
     active_sprite_shadow.update()
 
-# Function to change the action of a given sprite (index), uses change_sprite_action() function
 def change_selected_action(active_sprites_list, selected_index, sprite_direction, action):
-    selected = active_sprites_list[selected_index][0]
-    selected_shadow = active_sprites_list[selected_index][1]
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
+    selected = active_sprites_list[selected_index][0] 
+    selected_shadow = active_sprites_list[selected_index][1] 
     
     selected.action_change = True
     selected_shadow.action_change = True
@@ -375,109 +310,176 @@ def change_selected_action(active_sprites_list, selected_index, sprite_direction
     selected.played_once = False
     selected_shadow.played_once = False
 
-    if sprite_direction == "same direction":
-        active_sprite_images, active_sprite_shadow_images = change_sprite_action(selected.actor_sequence_directory, action, selected.sprite_name, selected.sprite_direction)
-    else: 
-        active_sprite_images, active_sprite_shadow_images = change_sprite_action(selected.actor_sequence_directory, action, selected.sprite_name, sprite_direction)
-        selected.sprite_direction = sprite_direction
-        selected_shadow.sprite_direction = sprite_direction
+    target_direction = sprite_direction if sprite_direction != "same direction" else selected.sprite_direction
+    
+    active_sprite_images, active_sprite_shadow_images = change_sprite_action(selected.actor_sequence_directory, action, selected.sprite_name, target_direction)
+    
+    selected.sprite_direction = target_direction
+    selected_shadow.sprite_direction = target_direction
     
     selected.sprite_action = action
     selected_shadow.sprite_action = action
     
-    selected.images = active_sprite_images
-    selected_shadow.images = active_sprite_shadow_images
+    selected.frames = active_sprite_images
+    selected.shadows = active_sprite_shadow_images
+    selected.index = 0 
+    selected.animation_time = len(selected.frames) / FPS if selected.frames else 0
 
-# Pygame keys for the battle sequence
+    selected_shadow.frames = active_sprite_shadow_images 
+    selected_shadow.shadows = active_sprite_shadow_images 
+    selected_shadow.index = 0 
+    selected_shadow.animation_time = len(selected_shadow.frames) / FPS if selected_shadow.frames else 0
+
+
 def battle_sequence_keys(event, RPG_mode_toggle):
-    if RPG_mode_toggle:
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
+    if RPG_mode_toggle and pygame and pygame.get_init(): 
         keys = pygame.key.get_pressed()
+        if keys[K_e]: 
+            change_selected_action(active_sprites_list, 0, "same direction", "combat_melee")
+        elif keys[K_a] and keys[K_w]:
+            change_selected_action(active_sprites_list, 0, "nw", "combat_walk")
+        elif keys[K_w] and keys[K_d]:
+            change_selected_action(active_sprites_list, 0, "ne", "combat_walk")
+        elif keys[K_d] and keys[K_s]:
+            change_selected_action(active_sprites_list, 0, "se", "combat_walk")
+        elif keys[K_s] and keys[K_a]:
+            change_selected_action(active_sprites_list, 0, "sw", "combat_walk")
+        elif keys[K_w]:
+            change_selected_action(active_sprites_list, 0, "n", "combat_walk")
+        elif keys[K_a]:
+            change_selected_action(active_sprites_list, 0, "w", "combat_walk")
+        elif keys[K_s]:
+            change_selected_action(active_sprites_list, 0, "s", "combat_walk")
+        elif keys[K_d]:
+            change_selected_action(active_sprites_list, 0, "e", "combat_walk")
+        else: 
+            change_selected_action(active_sprites_list, 0, "same direction", "combat_wait")
 
-        if keys[pygame.K_e]:
-            change_selected_action(active_sprites_list, 0, "same direction", "melee")
-        elif keys[pygame.K_a] and keys[pygame.K_w]:
-            change_selected_action(active_sprites_list, 0, "nw", "walk")
-        elif keys[pygame.K_w] and keys[pygame.K_d]:
-            change_selected_action(active_sprites_list, 0, "ne", "walk")
-        elif keys[pygame.K_d] and keys[pygame.K_s]:
-            change_selected_action(active_sprites_list, 0, "se", "walk")
-        elif keys[pygame.K_s] and keys[pygame.K_a]:
-            change_selected_action(active_sprites_list, 0, "sw", "walk")
-        elif keys[pygame.K_w]:
-            change_selected_action(active_sprites_list, 0, "n", "walk")
-        elif keys[pygame.K_a]:
-            change_selected_action(active_sprites_list, 0, "w", "walk")
-        elif keys[pygame.K_s]:
-            change_selected_action(active_sprites_list, 0, "s", "walk")
-        elif keys[pygame.K_d]:
-            change_selected_action(active_sprites_list, 0, "e", "walk")
-
-
-
-##################################### Battle sequence update #####################################
-
-# Initialize the environment once
 BE = None
 sprite_movement_list = []
 pathfinding_required = False
-
 target_index = 6
 
-def battle_sequence_scene_update(screen, background_battle_sequence, active_sprites_list, mouse_click_pos, grid_toggle, no_grid_movement_toggle):
-    global BE, sprite_movement_list, pathfinding_required
+def battle_sequence_scene_update(screen_surface, mouse_click_pos, grid_toggle, no_grid_movement_toggle):
+    """
+    Updates and renders one frame of the battle sequence to the provided screen_surface.
+    This function ensures pygame components are initialized internally.
+    """
+    global BE, sprite_movement_list, pathfinding_required, clock, background_battle_sequence, azure
 
-    # Check if pathfinding is required
-    if mouse_click_pos:
-        pathfinding_required = True
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized
 
+    # Load background if not already loaded
+    if background_battle_sequence is None:
+        try:
+            background_battle_sequence = pygame.image.load(battlefield_preset_map_directory)
+            background_battle_sequence = pygame.transform.smoothscale(background_battle_sequence, screen_surface.get_size())
+            print("HOMMIV_battle_sequence: Background loaded for offscreen rendering.")
+        except FileNotFoundError as e:
+            print(f"HOMMIV_battle_sequence: Heroes_assets_pngs folder is empty or not found. Missing file: {battlefield_preset_map_directory}")
+            background_battle_sequence = pygame.Surface(screen_surface.get_size())
+            background_battle_sequence.fill((0, 0, 0)) # Black fallback
+        except Exception as e:
+            print(f"HOMMIV_battle_sequence: Error loading background: {e}")
+            background_battle_sequence = pygame.Surface(screen_surface.get_size())
+            background_battle_sequence.fill((0, 0, 0)) # Black fallback
+
+    # Ensure sprites are loaded only once
+    if not active_sprites_list:
+        load_all_sprites()
+    
     # Draw background
-    screen.blit(background_battle_sequence, backdrop_position)
+    if background_battle_sequence:
+        screen_surface.blit(background_battle_sequence, (0, 0))
+    else:
+        screen_surface.fill((0, 0, 0)) 
 
-    # Draw grid
+    # Draw the hexagonal grid (assuming draw_hex_grid uses the passed screen_surface)
     if grid_toggle:
-        draw_isometric_grid()
+        draw_hex_grid(screen_surface) 
 
     # Update the environment only when needed
-    if no_grid_movement_toggle and not BE:
+    if no_grid_movement_toggle and not BE and active_sprites_list:
         sprite_movement_list = [
             SpriteMovement(sprite.position[0], sprite.position[1], sprite.hitbox_radius)
             for sprite, _ in active_sprites_list
         ]
-        BE = BattleEnvironment(1920, 1080, sprite_movement_list)
+        BE = BattleEnvironment(screen_width, screen_height, sprite_movement_list) 
+
+    if mouse_click_pos:
+        pathfinding_required = True
 
     # Update sprites
     for index, (active_sprite, active_sprite_shadow) in enumerate(active_sprites_list):
         if no_grid_movement_toggle and pathfinding_required:
-            # Perform pathfinding when the user requests
-            target_index = 6
             movement_range = 20
-            # If sprite selected
-            #path = a_star_search(BE, sprite_movement_list[index], sprite_movement_list[target_index], movement_range)
-            # If clicked on empty instead
             path = a_star_search(BE, SpriteMovement(active_sprite.position[0], active_sprite.position[1], path_radius),
                                      SpriteMovement(mouse_click_pos[0], mouse_click_pos[1], path_radius), movement_range)
-            active_sprite.path = path  # Set the path for the sprite
+            active_sprite.path = path
             active_sprite.sprite_action = "walk"
-            
-            active_sprite_shadow.path = path  # Set the path for the sprite
+            active_sprite_shadow.path = path
             active_sprite_shadow.sprite_action = "walk"
-            
-            #print(path)
             pathfinding_required = False
 
         update_sprite_and_shadow(active_sprite, active_sprite_shadow)
 
-        # temporary offset to correct apparent position
         offset_rect = active_sprite.rect.copy()
-        offset_rect.x -= 144    # manually found these values
-        offset_rect.y -= 136    # dwarf's final position is pretty accurate on my computer
+        offset_rect.x -= 144
+        offset_rect.y -= 136
 
-        # draw debug path
-        if grid_toggle:
+        if grid_toggle and azure: 
             if active_sprite.path is not None:
                 if len(active_sprite.path) > 1:
-                    pygame.draw.lines(screen, azure, False, active_sprite.path)
+                    pygame.draw.lines(screen_surface, azure, False, active_sprite.path)
 
-        # Draw sprites and their shadows
-        screen.blit(active_sprite.image, offset_rect)
-        screen.blit(active_sprite_shadow.image, offset_rect)
+        if active_sprite.image:
+            screen_surface.blit(active_sprite.image, offset_rect)
+        
+        if active_sprite_shadow.frames and active_sprite_shadow.frames[active_sprite_shadow.index]: 
+            screen_surface.blit(active_sprite_shadow.frames[active_sprite_shadow.index], offset_rect)
+        else:
+            pass 
+
+    return screen_surface 
+
+# This function is ONLY for standalone execution of HOMMIV_battle_sequence.py
+def run_standalone_battle_sequence():
+    global clock, background_battle_sequence, azure, _pygame_components_initialized
+
+    _initialize_pygame_components_in_battle_sequence() # Ensure pygame is initialized for standalone
+
+    screen = pygame.display.set_mode((screen_width, screen_height)) # Create actual window
+    pygame.display.set_caption("HOMMIV Battle Sequence Standalone")
+    
+    # Load background once for standalone
+    try:
+        background_battle_sequence = pygame.image.load(battlefield_preset_map_directory)
+        background_battle_sequence = pygame.transform.smoothscale(background_battle_sequence, screen.get_size())
+        print("HOMMIV_battle_sequence: Background loaded for standalone rendering.")
+    except FileNotFoundError as e:
+        print(f"HOMMIV_battle_sequence: Heroes_assets_pngs folder is empty or not found. Missing file: {battlefield_preset_map_directory}")
+        background_battle_sequence = pygame.Surface(screen.get_size())
+        background_battle_sequence.fill((0, 0, 0)) 
+    except Exception as e:
+        print(f"HOMMIV_battle_sequence: Error loading background: {e}")
+        background_battle_sequence = pygame.Surface(screen.get_size())
+        background_battle_sequence.fill((0, 0, 0)) 
+
+    load_all_sprites() 
+        
+    running = True
+    while running:
+        time_delta = clock.tick(FPS) / 1000.0
+        for event in pygame.event.get():
+            if event.type == QUIT: 
+                running = False
+            battle_sequence_keys(event, True) 
+            
+        battle_sequence_scene_update(screen, (0,0), True, True) 
+        pygame.display.flip()
+    pygame.quit()
+
+
+if __name__ == '__main__':
+    run_standalone_battle_sequence()

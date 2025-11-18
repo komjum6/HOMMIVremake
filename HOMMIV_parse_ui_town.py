@@ -74,7 +74,7 @@ def load_ui(file_path, town, biome, manager):
                     object_id=ObjectID(object_id=f"#{widget_name}")
                 )
                 #label = CustomImageLabel(image_path, geometry, manager, f"#{widget_name})
-            label_list.append(label)
+                label_list.append(label)
         elif widget_class == 'QPushButton':
             text = widget.find('property[@name="text"]/string').text
             button_text = text if text is not None else ''

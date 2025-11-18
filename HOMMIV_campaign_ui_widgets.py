@@ -1,6 +1,6 @@
 import pygame
 
-class Button:
+class HOMMIVButton:
     def __init__(self, x, y, width, height, text, font_size, callback):
         self.rect = pygame.Rect(x, y, width, height)
         self.color = (70, 70, 70)
